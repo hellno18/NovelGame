@@ -7,7 +7,7 @@ namespace Assets
 {
     class BaseCommand
     {
-        protected GameObject _root;
+        protected GameObject root;
         protected IDictionary command;
         protected bool isEndGame = false;
                 
@@ -15,7 +15,7 @@ namespace Assets
         public BaseCommand(GameObject root,IDictionary command)
         {
             //gameobject contructor
-            _root = root;
+            this.root = root;
             this.command = command;
         }
 

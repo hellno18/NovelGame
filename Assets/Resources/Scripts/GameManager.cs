@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     private TextAsset m_textArea;
     private JsonNode m_json;
     private List<BaseCommand> commandList;
-    public int commandIndex;
+    private int commandIndex;
 
     private static Dictionary<string, Type> CommandTable = new Dictionary<string, Type>
     {

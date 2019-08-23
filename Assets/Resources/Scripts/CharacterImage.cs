@@ -11,7 +11,7 @@ public class CharacterImage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        image = this.gameObject.GetComponent<Image>();
+        image = this.gameObject.GetComponent<Image>();     
     }
 
     // Update is called once per frame

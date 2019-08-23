@@ -83,7 +83,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2f773ce7f2cfca24c8c3698e3cc09a5d, type: 3}
   - {fileID: 21300000, guid: f64e217c556c37043b288521a42ce056, type: 3}
   - {fileID: 21300000, guid: 71b7a6b5b68c6ff41aabfc85ccaaf149, type: 3}
-  spriteIndex: 0
+  spriteIndex: -1
 --- !u!222 &4783039807744823253
 CanvasRenderer:
   m_ObjectHideFlags: 0
