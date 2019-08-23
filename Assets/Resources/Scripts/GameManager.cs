@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     private TextAsset m_textArea;
     private JsonNode m_json;
     private List<BaseCommand> commandList;
-    private int commandIndex;
+    public int commandIndex;
 
     private static Dictionary<string, Type> CommandTable = new Dictionary<string, Type>
     {
@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
 
         // DICTIONARY
         IList commands = m_json["commands"].Get<IList>();
+        /*
         foreach (IDictionary command in commands)
         {
             BaseCommand baseCommand;
@@ -62,30 +63,27 @@ public class GameManager : MonoBehaviour
             }
             commandList.Add(baseCommand);
         }
-        
-        commandIndex = 1;
-        NextCommand();
-
-   
-        /*
+        */
         foreach (IDictionary command in commands)
         {
             string command_type = command["command_type"].ToString();
             object[] args = new object[] { gameObject, command };
 
-            Type CommandType;
-            if (CommandTable.ContainsKey(command_type))
-            {
-                CommandType=command.
-            }
+            Type CommandType = CommandTable.ContainsKey(command_type) ? 
+                CommandType = CommandTable[command_type]: 
+                CommandType = typeof(BaseCommand);
 
-            
             BaseCommand baseCommand = (BaseCommand)Activator.CreateInstance(CommandType, args);
-        }*/
+            commandList.Add(baseCommand);
+        }
+
+        commandIndex = 0;
+        NextCommand();
+
     }
 
 
-   
+
 
     // Update is called once per frame
     void Update()

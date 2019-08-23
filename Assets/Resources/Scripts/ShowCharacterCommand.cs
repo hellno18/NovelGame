@@ -24,13 +24,16 @@ namespace Assets
             switch (command["position"])
             {
                 case "left":
-                    characterImage = _root.transform.Find("Character1").GetComponent<CharacterImage>();
+                    GameObject char1 = GameObject.Find("Character1");
+                    characterImage = char1.transform.GetComponent<CharacterImage>();
                     break;
                 case "center":
-                    characterImage = _root.transform.Find("Character2").GetComponent<CharacterImage>();
+                    GameObject char2 = GameObject.Find("Character2");
+                    characterImage = _root.transform.GetComponent<CharacterImage>();
                     break;
                 case "right":
-                    characterImage = _root.transform.Find("Character3").GetComponent<CharacterImage>();
+                    GameObject char3 = GameObject.Find("Character3");
+                    characterImage = char3.transform.GetComponent<CharacterImage>();
                     break;
                 default:
                     return;

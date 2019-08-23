@@ -21,7 +21,8 @@ namespace Assets
 
         public virtual void Run()
         {
-          
+            Debug.Log(command["command_type"] + " はまだオーバーライドされていません");
+            isEndGame = true;
         }
 
         public bool GetBool
