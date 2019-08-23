@@ -1,0 +1,22 @@
+{
+	"version": "1.0.0",
+	"commands": [
+    {
+      "command_type": "message",
+      "text": "俺の名前は木下"
+    },
+
+		{
+			"command_type": "message",
+			"text": "ごく一般的な高校生だ"
+		},
+		{
+			"command_type": "message",
+			"text": "「はぁー、今日も学校かったるいぜー\nなんかおもしれーこと無いかなー」"
+		},
+		{
+			"command_type": "message",
+			"text": "「あ、リョウスケ、おはよー」\n「ん？その声は…」"
+		}
+	]
+}

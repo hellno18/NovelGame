@@ -1,0 +1,41 @@
+{
+	"version": "1.0.0",
+	"commands": [
+	    {
+			"command_type": "message",
+			"text": "俺の名前は木下"
+		},
+		{
+			"command_type": "click_wait"
+		},
+		{
+			"command_type": "message",
+			"text": "ごく一般的な高校生だ"
+		},
+		{
+			"command_type": "click_wait"
+		},
+		{
+			"command_type": "message_clear"
+		},
+		{
+			"command_type": "message",
+			"text": "「はぁー、今日も学校かったるいぜー\nなんかおもしれーこと無いかなー」"
+		},
+		{
+			"command_type": "click_wait"
+		},
+		{
+			"command_type": "message",
+			"text": "「あ、リョウスケ、おはよー」\n「ん？その声は…」"
+		},
+		{
+			"command_type": "click_wait"
+		},
+		{
+			"command_type": "show_character",
+			"id": 1,
+			"position": "center"
+		}
+	]
+}
