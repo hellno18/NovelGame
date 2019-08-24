@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public TextAsset scriptTextFile;
     //public GameObject message;
 
-    private BaseCommand _currentCommand;
+    private BaseCommand m_currentCommand;
 
     private TextAsset m_textArea;
     private JsonNode m_json;
@@ -25,7 +25,8 @@ public class GameManager : MonoBehaviour
             {"show_character",typeof(ShowCharacterCommand)},
             {"show_background",typeof(ShowBackgroundCommand)},
             {"play_bgm",typeof(PlayBGMCommand)},
-            {"play_sfx",typeof(PlaySFXCommand)}
+            {"play_sfx",typeof(PlaySFXCommand)},
+            {"click_wait",typeof(WaitCommand)}
     };
 
     // Start is called before the first frame update
@@ -89,9 +90,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!_currentCommand.GetBool)
+        if (!m_currentCommand.GetBool)
         {
-            _currentCommand.Run();
+            m_currentCommand.Run();
         }
         else
         {
@@ -105,7 +106,7 @@ public class GameManager : MonoBehaviour
     {
         if (!IsCommandFinish())
         {
-            _currentCommand = commandList[commandIndex];
+            m_currentCommand = commandList[commandIndex];
             commandIndex++;
         }
     }

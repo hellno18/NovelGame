@@ -10,44 +10,30 @@ namespace Assets
         private bool m_isAnimationPlay = true;
         private int m_messageLength = 0;
         float m_timer = 0.1f;
-        private Text _messageText;
-        private Text _characterName;
+        private Text m_messageText;
+        private Text m_characterName;
         private int index;
         public MessageCommand(GameObject root, IDictionary command) :base(root, command)
         {
            
-            _messageText = root.transform.Find("TextOut/Message").GetComponent<Text>();
-            _characterName = root.transform.Find("TextOut/NamePerson").GetComponent<Text>();
+            m_messageText = root.transform.Find("TextOut/Message").GetComponent<Text>();
+            m_characterName = root.transform.Find("TextOut/NamePerson").GetComponent<Text>();
         }
         
         public override void Run()
         {
             if (m_isAnimationPlay)
             {
+                string nameChar= "";
+                if (command["name"] != null)
+                {
+                    nameChar = this.command["name"].ToString();
+                }
+                m_characterName.text = nameChar;
 
-                if (command["id"] != null)
-                {
-                    index = Convert.ToInt32(command["id"]);
-                }
-                if (index == 0)
-                {
-                    _characterName.text = "Unityちゃん";
-                }
-                else if (index == 1)
-                {
-                    _characterName.text = "misaki";
-                }
-                else if (index == 2)
-                {
-                    _characterName.text = "yuko";
-                }
-                else if (index == -1)
-                {
-                    _characterName.text = "???";
-                }
 
                 string currentMessage = (string)this.command["text"];
-                _messageText.text = currentMessage.Substring(0, m_messageLength);
+                m_messageText.text = currentMessage.Substring(0, m_messageLength);
                 m_timer -= Time.deltaTime;
                
                 if (m_timer < 0)

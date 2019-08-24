@@ -15,7 +15,7 @@ namespace Assets
             GameObject root,
             IDictionary command) : base(root, command)
         {
-            se = root.GetComponent<AudioSource>();
+            se = GameObject.Find("SFX").GetComponent<AudioSource>();
         }
 
         public override void Run()
@@ -29,18 +29,15 @@ namespace Assets
                 index = Convert.ToInt32(command["id"]);
 
             }
-
-            if (index == null)
+            AudioClip audioClip = resource.GetSFX(index);
+            if (audioClip != null)
             {
-                AudioClip audioClip = resource.GetBGM(1);
-                se.clip = audioClip;
-                se.Play();
+                //se.clip = audioClip;
+                se.PlayOneShot(audioClip);
             }
             else
             {
-                AudioClip audioClip = resource.GetBGM(index);
-                se.clip = audioClip;
-                se.Play();
+                se.Stop();
             }
 
             isEndGame = true;

@@ -5,13 +5,22 @@
       "command_type": "play_bgm",
       "id": 1
     },
+
     {
       "command_type": "message",
       "text": "俺の名前は木下",
-      "id": -1
+      "name": "???"
+    },
+    {
+      "command_type": "play_sfx",
+      "id": 2
     },
     {
       "command_type": "click_wait"
+    },
+    {
+      "command_type": "play_sfx",
+      "id": -1
     },
     {
       "command_type": "show_background",
@@ -24,9 +33,19 @@
       "id": 4
     },
     {
+      "command_type": "click_wait"
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": 1,
+      "id": 2,
+      "flip": "right"
+    },
+    {
       "command_type": "message",
       "text": "ごく一般的な高校生だ",
-      "id": 0
+      "name": "UnityChan"
     },
     {
       "command_type": "click_wait"
@@ -43,7 +62,7 @@
     {
       "command_type": "message",
       "text": "「はぁー、今日も学校かったるいぜー\nなんかおもしれーこと無いかなー」",
-      "id": -1
+      "name": "???"
     },
     {
       "command_type": "click_wait"
@@ -51,7 +70,7 @@
     {
       "command_type": "message",
       "text": "「あ、リョウスケ、おはよー」\n「ん？その声は…」",
-      "id": -1
+      "name": "???"
     },
     {
       "command_type": "click_wait"
@@ -69,7 +88,13 @@
     {
       "command_type": "message",
       "text": "「あ、疲れた」",
-      "id": 2
+      "name": "MisakiChan"
+    },
+    {
+      "command_type": "show_character",
+      "chara_id": 1,
+      "id": 5,
+      "position": "center"
     },
     {
       "command_type": "play_bgm",

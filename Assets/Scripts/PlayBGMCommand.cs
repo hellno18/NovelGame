@@ -29,18 +29,16 @@ namespace Assets
                 index = Convert.ToInt32(command["id"]);
                
             }
-
-            if (index == null)
+            AudioClip audioClip = resource.GetBGM(index);
+            if (audioClip != null)
             {
-                AudioClip audioClip = resource.GetBGM(1);
                 bgm.clip = audioClip;
                 bgm.Play();
             }
             else
             {
-                AudioClip audioClip = resource.GetBGM(index);
-                bgm.clip = audioClip;
-                bgm.Play();
+
+                bgm.Stop();
             }
 
             isEndGame = true;
