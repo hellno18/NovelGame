@@ -10,7 +10,7 @@ using Assets;
 public class GameManager : MonoBehaviour
 {
     public TextAsset scriptTextFile;
-    public GameObject message;
+    //public GameObject message;
 
     private BaseCommand _currentCommand;
 
@@ -24,21 +24,22 @@ public class GameManager : MonoBehaviour
             {"message",typeof(MessageCommand)},
             {"show_character",typeof(ShowCharacterCommand)},
             {"show_background",typeof(ShowBackgroundCommand)},
-            {"play_bgm",typeof(PlayBGMCommand)}
+            {"play_bgm",typeof(PlayBGMCommand)},
+            {"play_sfx",typeof(PlaySFXCommand)}
     };
 
     // Start is called before the first frame update
     void Start()
     {
+        ScenarioResource resource = ScenarioResource.GetInstace();
+        resource.Load();
+        //m_json = JsonNode.Parse(scriptTextFile.text);
+        m_json = resource.GetJSON(0);
         commandList = new List<BaseCommand>();
-
-        //showMessage = new ShowMessageAnimation(m_messageBox,);
-        // m_textArea = Resources.Load("Scripts/SampleScript") as TextAsset;
-        m_json = JsonNode.Parse(scriptTextFile.text);
-
-
+     
         // DICTIONARY
         IList commands = m_json["commands"].Get<IList>();
+        
         /*
         foreach (IDictionary command in commands)
         {
@@ -92,7 +93,10 @@ public class GameManager : MonoBehaviour
         {
             _currentCommand.Run();
         }
-        else NextCommand();
+        else
+        {
+            NextCommand();
+        }
     }
 
     private bool IsCommandFinish() { return commandList.Count <= commandIndex;  }

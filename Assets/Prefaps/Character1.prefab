@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5790328026701562087}
   - component: {fileID: 3410437661592786320}
-  - component: {fileID: 2424636493515059312}
   - component: {fileID: 4783039807744823253}
   m_Layer: 5
   m_Name: Character1
@@ -67,23 +66,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &2424636493515059312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5790328026701562088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ac6d6ef60c160f459ccbc7e2e76cd0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteList:
-  - {fileID: 21300000, guid: 2f773ce7f2cfca24c8c3698e3cc09a5d, type: 3}
-  - {fileID: 21300000, guid: f64e217c556c37043b288521a42ce056, type: 3}
-  - {fileID: 21300000, guid: 71b7a6b5b68c6ff41aabfc85ccaaf149, type: 3}
-  spriteIndex: -1
 --- !u!222 &4783039807744823253
 CanvasRenderer:
   m_ObjectHideFlags: 0

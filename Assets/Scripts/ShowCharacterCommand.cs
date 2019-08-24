@@ -11,24 +11,24 @@ namespace Assets
 {
     class ShowCharacterCommand : BaseCommand
     {
+        Text characterName;
+        Image characterImage;
         public ShowCharacterCommand(
             GameObject root,
             IDictionary command) : base(root, command)
         {
-
+           
         }
 
-       
         public override void Run()
         {
-            Image characterImage;
+            
             switch (command["position"])
             {
                 case "left":
                     characterImage = root.transform.Find("Character1").GetComponent<Image>();
                     break;
                 case "center":
-                    
                     characterImage = root.transform.Find("Character2").GetComponent<Image>();
                     break;
                 case "right":
@@ -41,6 +41,7 @@ namespace Assets
             int characterID = Convert.ToInt32(command["chara_id"]);
             int index;
             ScenarioResource resource = ScenarioResource.GetInstace();
+           
 
             if (command["id"] != null)
             {

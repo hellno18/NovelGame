@@ -27,14 +27,14 @@ namespace Assets
         private AudioClip[] _sfx;
         private TextAsset[] _jsonTexts;
 
-        void Load()
+        public void Load()
         {
             _jsonTexts = Resources.LoadAll<TextAsset>("Json");
             _characters = new List<Sprite[]>();
-            _characters.Add(Resources.LoadAll<Sprite>("Character/0"));
-            _characters.Add(Resources.LoadAll<Sprite>("Character/1"));
-            _characters.Add(Resources.LoadAll<Sprite>("Character/2"));
-            _backgrounds = Resources.LoadAll<Sprite>("Background");
+            _characters.Add(Resources.LoadAll<Sprite>("Pictures/Characters/0"));
+            _characters.Add(Resources.LoadAll<Sprite>("Pictures/Characters/1"));
+            _characters.Add(Resources.LoadAll<Sprite>("Pictures/Characters/2"));
+            _backgrounds = Resources.LoadAll<Sprite>("Backgrounds");
             _bgms = Resources.LoadAll<AudioClip>("BGM");
             _sfx = Resources.LoadAll<AudioClip>("SFX");
         }
