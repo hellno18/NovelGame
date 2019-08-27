@@ -9,11 +9,8 @@ using Assets;
 
 public class GameManager : MonoBehaviour
 {
-    public TextAsset scriptTextFile;
-    //public GameObject message;
-
+    [SerializeField] int Story;
     private BaseCommand m_currentCommand;
-
     private TextAsset m_textArea;
     private JsonNode m_json;
     private List<BaseCommand> commandList;
@@ -26,7 +23,8 @@ public class GameManager : MonoBehaviour
             {"show_background",typeof(ShowBackgroundCommand)},
             {"play_bgm",typeof(PlayBGMCommand)},
             {"play_sfx",typeof(PlaySFXCommand)},
-            {"click_wait",typeof(WaitCommand)}
+            {"click_wait",typeof(WaitCommand)},
+            { "stop_sfx",typeof(StopSFXCommand)}
     };
 
     // Start is called before the first frame update
@@ -34,38 +32,12 @@ public class GameManager : MonoBehaviour
     {
         ScenarioResource resource = ScenarioResource.GetInstace();
         resource.Load();
-        //m_json = JsonNode.Parse(scriptTextFile.text);
-        m_json = resource.GetJSON(0);
+        m_json = resource.GetJSON(Story);
         commandList = new List<BaseCommand>();
      
         // DICTIONARY
         IList commands = m_json["commands"].Get<IList>();
         
-        /*
-        foreach (IDictionary command in commands)
-        {
-            BaseCommand baseCommand;
-            switch (command["command_type"].ToString())
-            {
-                case "message":
-                    baseCommand = new MessageCommand(this.gameObject, command);
-                    break;
-                case "show_character":
-                    baseCommand = new ShowCharacterCommand(this.gameObject, command);
-                    break;
-                case "play_bgm":
-                    baseCommand = new PlayBGMCommand(this.gameObject, command);
-                    break;
-                case "show_background":
-                    baseCommand = new ShowBackgroundCommand(this.gameObject, command);
-                    break;
-                default:
-                    baseCommand = new BaseCommand(this.gameObject, command);
-                    break;
-            }
-            commandList.Add(baseCommand);
-        }
-        */
         foreach (IDictionary command in commands)
         {
             string command_type = command["command_type"].ToString();
@@ -83,10 +55,7 @@ public class GameManager : MonoBehaviour
         NextCommand();
 
     }
-
-
-
-
+    
     // Update is called once per frame
     void Update()
     {

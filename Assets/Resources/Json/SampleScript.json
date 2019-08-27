@@ -47,6 +47,7 @@
       "text": "ごく一般的な高校生だ",
       "name": "UnityChan"
     },
+
     {
       "command_type": "click_wait"
     },
@@ -66,6 +67,12 @@
     },
     {
       "command_type": "click_wait"
+    },
+    {
+      "command_type": "show_character",
+      "position": "left",
+      "chara_id": 0,
+      "id": 4
     },
     {
       "command_type": "message",

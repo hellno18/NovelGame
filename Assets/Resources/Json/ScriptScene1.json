@@ -1,0 +1,300 @@
+{
+	"version": "1.0.0",
+  "commands": [
+    {
+      "command_type": "play_bgm",
+      "id": 11
+    },
+    {
+      "command_type": "show_background",
+      "id": 22
+    },
+    {
+      "command_type": "message",
+      "name": "???",
+      "text": "-主人公の学校にて"
+    },
+    {
+      "command_type": "show_background",
+      "id": 12
+    },
+    {
+      "command_type": "play_sfx",
+      "id": 7
+    },
+    {
+      "command_type": "message",
+      "text": "(チャイム音)"
+    },
+    {
+      "command_type": "stop_sfx"
+    },
+    {
+      "command_type": "click_wait"
+    },
+    {
+      "command_type": "show_character",
+      "id": 0,
+      "position": "left",
+      "chara_id": 0,
+      "flip": "right"
+    },
+    {
+      "command_type": "message",
+      "name": "ユキ",
+      "text": "「ふぅ～！最後の授業も終わったし、今日はもう帰ろうかな。」"
+    },
+    {
+      "command_type": "message",
+      "name": "ユキ",
+      "text": "私の名前は桜田　ユキ。普通の高校に通う至って普通の女子高生"
+    },
+    {
+      "command_type": "show_character",
+      "id": 0,
+      "position": "right",
+      "chara_id": 1
+    },
+    {
+      "command_type": "message",
+      "name": "怜奈",
+      "text": "「ユキ、今日の放課後予定ある?」"
+    },
+    {
+      "command_type": "message",
+      "name": "ユキ",
+      "text": "「あ、怜奈ちゃん!」"
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": -1
+    },
+    {
+      "command_type": "show_character",
+      "position": "left",
+      "chara_id": -1
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": 1,
+      "id": 2
+    },
+    {
+      "command_type": "message",
+      "text": "この子は夜影　怜奈ちゃん。物静かで表情を表に出さないけど、可愛くてとてもいい子だよ。"
+    },
+    {
+      "command_type": "click_wait"
+    },
+    {
+      "command_type": "show_background",
+      "id": 9
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": -1
+    },
+    {
+      "command_type": "show_character",
+      "position": "left",
+      "chara_id": 0,
+      "id": 1,
+      "flip": "right"
+    },
+    {
+      "command_type": "message",
+      "text": "「今日はもう家に帰って本を読もうと思っていたの。」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "show_character",
+      "position": "left",
+      "chara_id": 0,
+      "id": 0,
+      "flip": "right"
+
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": 1,
+      "id": 0
+    },
+    {
+      "command_type": "message",
+      "text": "「そう。じゃあ、私に付き合ってくれない?」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "show_character",
+      "position": "left",
+      "chara_id": 0,
+      "id": 3,
+      "flip": "right"
+    },
+    {
+      "command_type": "message",
+      "text": "どこか行くの?",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": 1,
+      "id": 2
+    },
+    {
+      "command_type": "message",
+      "text": "最近知ったんだけど、私の家の近くに放棄された学校があるの。そこに幽霊を見に肝試しに行こうと思って。",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "幽霊・・・。ごめんね怜奈ちゃん。私幽霊苦手なの。",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "message",
+      "text": "「楽しみね。写真に収めたいわ。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": -1
+    },
+    {
+      "command_type": "show_character",
+      "position": "left",
+      "chara_id": -1
+    },
+    {
+      "command_type": "message",
+      "text": "幽霊なんて信じないが、それでも怖いものは怖い でも怜奈ちゃんは聞いてくれそうになかった。"
+    },
+    {
+      "command_type": "click_wait"
+    },
+    {
+      "command_type": "show_background",
+      "id": 12
+    },
+    {
+      "command_type": "show_character",
+      "position": "left",
+      "chara_id": 2,
+      "id": 0
+    },
+    {
+      "command_type": "message",
+      "text": "「何の話をしてるの?」",
+      "name": "薫"
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": 1,
+      "id": 0
+    },
+    {
+      "command_type": "message",
+      "text": "「薫ちゃ～ん・・・。」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": -1
+    },
+    {
+      "command_type": "show_character",
+      "position": "left",
+      "chara_id": -1
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": 2,
+      "id": 2
+    },
+    {
+      "command_type": "message",
+      "text": "この子は佐村　薫ちゃん。怜奈ちゃんとはまた違ってとてもかっこいいもう一人の友達。"
+    },
+    {
+      "command_type": "click_wait"
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": -1
+    },
+    {
+      "command_type": "show_character",
+      "position": "left",
+      "chara_id": 1,
+      "id": 0
+    },
+    {
+      "command_type": "message",
+      "text": "「あ、薫。私たち今夜家の近くの廃校に肝試しに行こうと思っていたの。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": 2,
+      "id": 0
+    },
+    {
+      "command_type": "message",
+      "text": "「へぇ・・・。面白そうじゃん。私も付いていくわ。」",
+      "name": "薫"
+    },
+    {
+      "command_type": "message",
+      "text": "「よし。3人もいれば怖いものなしね。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": 0,
+      "id": 0
+    },
+    {
+      "command_type": "message",
+      "text": "「まだ行くだなんて言ってないのに・・・。」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "click_wait"
+    },
+    {
+      "command_type": "show_character",
+      "position": "left",
+      "chara_id": -1
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": -1
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": -1
+    },
+    {
+      "command_type": "show_background",
+      "id": 14
+    },
+    {
+      "command_type": "message",
+      "text": "その日の夜、私たちは廃校に着いた。見る影もなく寂れていて、もう何年も放置されているようだった。"
+    }
+  ]
+}
