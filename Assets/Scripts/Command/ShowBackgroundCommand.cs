@@ -26,6 +26,14 @@ namespace Assets
             if (command["id"] != null)
             {
                 index = Convert.ToInt32(command["id"]);
+                if (index == -1)
+                {
+                    imageBackgound.gameObject.SetActive(false);
+                }
+                else
+                {
+                    imageBackgound.gameObject.SetActive(true);
+                }
             }
 
             Sprite sprite = resource.GetBackground(index);

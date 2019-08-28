@@ -17,6 +17,10 @@ namespace Assets
             {
                 this.isEndGame = true;
             }
+            else if (Input.GetKeyUp(KeyCode.LeftControl))
+            {
+                this.isEndGame = true;
+            }
         }
     }
 }

@@ -48,6 +48,10 @@ namespace Assets
                 }
                 
             }
+            else if (Input.GetKeyUp(KeyCode.LeftControl))
+            {
+                this.isEndGame = true;
+            }
             else
             {
                 if (Input.GetMouseButtonUp(0))
