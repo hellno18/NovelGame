@@ -48,7 +48,7 @@ namespace Assets
                 }
                 
             }
-            else if (Input.GetKeyUp(KeyCode.LeftControl))
+            else if (Input.GetKeyUp(KeyCode.LeftControl)|| (Input.GetKeyUp(KeyCode.RightControl)))
             {
                 this.isEndGame = true;
             }

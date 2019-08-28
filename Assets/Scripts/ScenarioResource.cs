@@ -34,6 +34,7 @@ namespace Assets
             _characters.Add(Resources.LoadAll<Sprite>("Pictures/Characters/0"));
             _characters.Add(Resources.LoadAll<Sprite>("Pictures/Characters/1"));
             _characters.Add(Resources.LoadAll<Sprite>("Pictures/Characters/2"));
+            _characters.Add(Resources.LoadAll<Sprite>("Pictures/Characters/3"));
             _backgrounds = Resources.LoadAll<Sprite>("Backgrounds");
             _bgms = Resources.LoadAll<AudioClip>("BGM");
             _sfx = Resources.LoadAll<AudioClip>("SFX");

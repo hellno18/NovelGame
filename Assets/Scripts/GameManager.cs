@@ -24,7 +24,9 @@ public class GameManager : MonoBehaviour
             {"play_bgm",typeof(PlayBGMCommand)},
             {"play_sfx",typeof(PlaySFXCommand)},
             {"click_wait",typeof(WaitCommand)},
-            { "stop_sfx",typeof(StopSFXCommand)}
+            { "stop_sfx",typeof(StopSFXCommand)},
+            { "clear_message",typeof(ClearMessageCommand)},
+            { "camera_shake",typeof(ShakeCommand)}
     };
 
     // Start is called before the first frame update

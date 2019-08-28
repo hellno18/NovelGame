@@ -37,6 +37,9 @@ namespace Assets
                     characterImage = root.transform.Find("Character3").GetComponent<Image>();
                     animator = root.transform.Find("Character3").GetComponent<Animator>();
                     break;
+                case "photo":
+                    characterImage = root.transform.Find("Photo").GetComponent<Image>();
+                    break;
                 default:
                     return;
             }
@@ -102,6 +105,7 @@ namespace Assets
             {
                 animator.SetBool("isFade", false);
             }
+            
         }
     }
 }
