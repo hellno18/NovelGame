@@ -13,11 +13,13 @@ namespace Assets
         private Text m_messageText;
         private Text m_characterName;
         private int index;
+        private Image m_arrow;
         public MessageCommand(GameObject root, IDictionary command) :base(root, command)
         {
            
             m_messageText = root.transform.Find("TextOut/Message").GetComponent<Text>();
             m_characterName = root.transform.Find("TextOut/NamePerson").GetComponent<Text>();
+            m_arrow = root.transform.Find("ArrowClick").GetComponent<Image>();
         }
         
         public override void Run()
@@ -45,18 +47,21 @@ namespace Assets
                 if ( currentMessage.Length< m_messageLength)
                 {
                     m_isAnimationPlay = false;
+                    m_arrow.gameObject.SetActive(true);
                 }
                 
             }
             else if (Input.GetKeyUp(KeyCode.LeftControl)|| (Input.GetKeyUp(KeyCode.RightControl)))
             {
                 this.isEndGame = true;
+                m_arrow.gameObject.SetActive(false);
             }
             else
             {
                 if (Input.GetMouseButtonUp(0))
                 {
                     this.isEndGame = true;
+                    m_arrow.gameObject.SetActive(false);
                 }
             }
         }

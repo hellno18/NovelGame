@@ -279,6 +279,10 @@
     },
     {
       "command_type": "click_wait"
+    },
+    {
+      "command_type": "change_scene",
+      "id": "2"
     }
   ]
 }

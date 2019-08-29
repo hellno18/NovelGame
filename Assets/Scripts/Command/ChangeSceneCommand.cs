@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using System;
 namespace Assets
 {
     class ChangeSceneCommand : BaseCommand
@@ -12,7 +12,19 @@ namespace Assets
         }
         public override void Run()
         {
-            SceneManager.LoadScene("Scene2");
+            if (command["id"] != null)
+            {
+                int index = Convert.ToInt32(command["id"]);
+                if (index==1)
+                {
+                    SceneManager.LoadScene("Scene2");
+                }
+                else if (index == 2)
+                {
+                    SceneManager.LoadScene("Scene3");
+                }
+            }
+
         }
     }
 }

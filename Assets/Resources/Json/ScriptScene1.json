@@ -1133,7 +1133,8 @@
       "name": "薫"
     },
     {
-      "command_type": "change_scene"
+      "command_type": "change_scene",
+      "id": 1
     }
   ]
 }
