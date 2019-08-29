@@ -516,6 +516,7 @@
       "position": "left",
       "chara_id": 0,
       "id": 2
+
     },
     {
       "command_type": "show_character",
@@ -997,7 +998,142 @@
     {
       "command_type": "message",
       "text": "急なチャイム音に私たちは動揺した。まるでうめき声のようにも聞こえる音だった。"
+    },
+    {
+      "command_type": "message",
+      "text": "「きゃあああ！暗くて何も見えない!」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "camera_shake",
+      "shake": "a"
+    },
+    {
+      "command_type": "message",
+      "text": "「何が起きているの?携帯のライトも消えちゃったし。怜奈、あんた何かした?」",
+      "name": "薫"
+    },
+    {
+      "command_type": "message",
+      "text": "「私のせいじゃないわ。携帯だって使ってないし。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "play_sfx",
+      "id": 8
+    },
+    {
+      "command_type": "message",
+      "text": "暗くて動けない。怖い。怖い。怖い。怖い。ただひたすら、その場に立ち尽くすしかなかった。",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "携帯のライトが戻る"
+    },
+    {
+      "command_type": "show_background",
+      "id": -1
+    },
+    {
+      "command_type": "show_background",
+      "id": 2
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": 2,
+      "id": 2
+    },
+    {
+      "command_type": "message",
+      "text": "「あれ?チャイムが鳴り終わったら、急に元に戻った・・・」",
+      "name": "薫"
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": 1,
+      "id": 4
+    },
+    {
+      "command_type": "message",
+      "text": "「うん。私の携帯も。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": 2,
+      "id": 3
+    },
+    {
+      "command_type": "message",
+      "text": "「何かおかしい・・・怜奈、もうここから出よう!」」",
+      "name": "薫"
+    },
+    {
+      "command_type": "show_character",
+      "position": "left",
+      "chara_id": 0,
+      "id": 2
+    },
+    {
+      "command_type": "message",
+      "text": "「そうだよ!ここから出よう!」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "show_background",
+      "id": -1
+    },
+    {
+      "command_type": "show_background",
+      "id": 17
+    },
+    {
+      "command_type": "message",
+      "text": "「それはそうだけど・・・この怪奇現象が何なのか知りたい。もう少し調べましょう。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "「いいえ、だめよ!この学校は危険だわ。ユキだってこんなに震えてるし!」",
+      "name": "薫"
+    },
+    {
+      "command_type": "message",
+      "text": "「怜奈ちゃん・・・本当にだめ・・・」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "message",
+      "text": "こんな状況に、こんな空間に耐えられるわけがなかった。もう帰りたい。頭の中はそれでいっぱいだった。"
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": 1,
+      "id": 1
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": 1,
+      "id": 2
+    },
+    {
+      "command_type": "message",
+      "text": "「はぁ・・・分かった。幽霊を捕まえられなかったのは残念だけど。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "「屋上に行って全体の様子を見ましょう!」",
+      "name": "薫"
+    },
+    {
+      "command_type": "change_scene"
     }
-
   ]
 }

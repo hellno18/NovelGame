@@ -1,0 +1,284 @@
+{
+  "version": "1.0.0",
+  "commands": [
+    {
+      "command_type": "play_bgm",
+      "id": 2
+    },
+    {
+      "command_type": "show_background",
+      "id": 16
+    },
+    {
+      "command_type": "message",
+      "text": "そうだ。屋上からなら今何が起きているのかわかるかもしれない。手掛かりになるような情報は少しでも多く集めないと。"
+    },
+    {
+      "command_type": "show_character",
+      "position": "left",
+      "chara_id": 0,
+      "id": 1,
+      "flip": "right"
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": 1,
+      "id": 2
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": 2,
+      "id": 3
+    },
+    {
+      "command_type": "message",
+      "text": "「ほら。外へ行こう。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "show_character",
+      "position": "left",
+      "chara_id": 0,
+      "id": 0
+    },
+    {
+      "command_type": "message",
+      "text": "「早くちゃんとした空気が吸いたい・・・」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": 1,
+      "id": 3
+    },
+    {
+      "command_type": "message",
+      "text": "「あれ。ドアが開かない。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": 2,
+      "id": 3
+    },
+    {
+      "command_type": "message",
+      "text": "「何で?ここの学校は鍵開いてるんじゃなかったの?」",
+      "name": "薫"
+    },
+    {
+      "command_type": "message",
+      "text": "「そのはずだけど・・・」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "「私にもやらせて!ん～開かないわ・・・」",
+      "name": "薫"
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": 1,
+      "id": 4
+    },
+    {
+      "command_type": "message",
+      "text": "「でも私は嘘はついてないわ。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "「じゃあこれをどう説明するの?また怪奇現象とでも言うわけ?」",
+      "name": "薫"
+    },
+    {
+      "command_type": "message",
+      "text": "「薫の方が頭良いんだから、薫が考えてよ。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "「喧嘩しないで・・・」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "play_sfx",
+      "id": 0
+    },
+    {
+      "command_type": "message",
+      "text": "みんなやっぱり不安なんだ。この学校が怖いんだ。いつも仲良しなのにまさか喧嘩するなんて。"
+    },
+    {
+      "command_type": "show_background",
+      "id": -1
+    },
+    {
+      "command_type": "show_background",
+      "id": 17
+    },
+    {
+      "command_type": "message",
+      "text": "「薫が吹っかけた。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "「あなたそれ本気で言ってんの?」",
+      "name": "薫"
+    },
+    {
+      "command_type": "message",
+      "text": "「1階からなら外に出れるかも・・・」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "message",
+      "text": "「そうね。1階からならこの学校から抜け出せるかも!　ただ、何か恐ろしいものがまだこの学校にあるかも・・・このまま、何事もなくここから出れるとは思わない。」",
+      "name": "薫"
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": 1,
+      "id": 0
+    },
+    {
+      "command_type": "message",
+      "text": "「多分大丈夫よ(まだ探検できそうね)。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": 2,
+      "id": 3
+    },
+    {
+      "command_type": "message",
+      "text": "「こんなことになったのもあなたのせいよ!怜奈!」",
+      "name": "薫"
+    },
+    {
+      "command_type": "camera_shake",
+      "shake": "a"
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": 1,
+      "id": 2
+    },
+    {
+      "command_type": "message",
+      "text": "「付いてくるって言ったのは薫じゃん。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": 2,
+      "id": 4
+    },
+    {
+      "command_type": "message",
+      "text": "「でも、私はー(ダッシュ)」",
+      "name": "薫"
+    },
+    {
+      "command_type": "show_character",
+      "position": "left",
+      "chara_id": 0,
+      "id": 5
+    },
+    {
+      "command_type": "message",
+      "text": "「やめて!喧嘩しても何も解決しないよ!」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": 2,
+      "id": 5
+    },
+    {
+      "command_type": "message",
+      "text": "「ごめん・・・ユキの言うとおりね。早く1階に行ってここから出ましょう!」",
+      "name": "薫"
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": 2,
+      "id": 0
+    },
+    {
+      "command_type": "message",
+      "text": "「果たして私たちはここから抜け出せるのかな～」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": 1,
+      "id": 2
+    },
+    {
+      "command_type": "message",
+      "text": "「階段を下りていけそうね。移動しましょう!」",
+      "name": "薫"
+    },
+    {
+      "command_type": "message",
+      "text": "「薫ちゃん・・・廊下の奥に何か見えるんだけど・・・」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "message",
+      "text": "廊下の奥のそれはゆらゆらと揺れていた。人間？いや、そんな風には見えない。まさか・・・・"
+    },
+    {
+      "command_type": "message",
+      "text": "「本当だ・・・誰かそこにいるの?」",
+      "name": "薫"
+    },
+    {
+      "command_type": "message",
+      "text": "「人のように見えるけど・・・まさか幽霊?」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "「冗談はやめて怜奈！幽霊なんているわけないでしょ！」",
+      "name": "薫"
+    },
+    {
+      "command_type": "message",
+      "text": "「じゃああの正体が何か教えてよ。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "「こっちに向かってきてるよ！」",
+      "name": "ユキ"
+    },
+
+    {
+      "command_type": "message",
+      "text": "「きゃああああ！！」"
+    },
+    {
+      "command_type": "play_sfx",
+      "id": 4
+    },
+    {
+      "command_type": "click_wait"
+    }
+  ]
+}

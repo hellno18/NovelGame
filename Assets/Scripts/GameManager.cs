@@ -26,7 +26,8 @@ public class GameManager : MonoBehaviour
             {"click_wait",typeof(WaitCommand)},
             { "stop_sfx",typeof(StopSFXCommand)},
             { "clear_message",typeof(ClearMessageCommand)},
-            { "camera_shake",typeof(ShakeCommand)}
+            { "camera_shake",typeof(ShakeCommand)},
+            {"change_scene" ,typeof(ChangeSceneCommand)}
     };
 
     // Start is called before the first frame update
