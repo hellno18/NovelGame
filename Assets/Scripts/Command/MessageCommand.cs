@@ -51,10 +51,17 @@ namespace Assets
                 }
                 
             }
-            else if (Input.GetKeyUp(KeyCode.LeftControl)|| (Input.GetKeyUp(KeyCode.RightControl)))
+     
+            else if (Input.anyKey)
             {
-                this.isEndGame = true;
-                m_arrow.gameObject.SetActive(false);
+                foreach (KeyCode kcode in Enum.GetValues(typeof(KeyCode)))
+                {
+                    if (Input.GetKey(KeyCode.LeftControl) || (Input.GetKey(KeyCode.RightControl)))
+                    {
+                        this.isEndGame = true;
+                        m_arrow.gameObject.SetActive(false);
+                    }
+                }
             }
             else
             {
