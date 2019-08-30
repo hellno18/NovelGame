@@ -8,6 +8,7 @@ namespace Assets
     class MessageCommand: BaseCommand
     {
         private bool m_isAnimationPlay = true;
+        private bool m_skip = false;
         private int m_messageLength = 0;
         float m_timer = 0.05f;
         private Text m_messageText;
@@ -40,7 +41,8 @@ namespace Assets
                
                 if (m_timer < 0)
                 {
-                    m_timer = 0.05f;
+                    if(!m_skip) m_timer = 0.05f;
+                    else m_timer = 0.1f;
                     m_messageLength++;
                 }
 
@@ -51,7 +53,12 @@ namespace Assets
                 }
                 
             }
-     
+
+            else if(Input.GetKeyUp(KeyCode.LeftControl) || (Input.GetKeyUp(KeyCode.RightControl)))
+            {
+                m_skip = false;
+                Debug.Log(m_skip);
+            }
             else if (Input.anyKey)
             {
                 foreach (KeyCode kcode in Enum.GetValues(typeof(KeyCode)))
@@ -60,9 +67,11 @@ namespace Assets
                     {
                         this.isEndGame = true;
                         m_arrow.gameObject.SetActive(false);
+                        m_skip = true;
                     }
                 }
             }
+         
             else
             {
                 if (Input.GetMouseButtonUp(0))
