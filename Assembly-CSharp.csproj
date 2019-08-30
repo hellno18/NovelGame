@@ -61,7 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Plugin\MiniJSON.cs" />
-    <Compile Include="Assets\Scripts\BaseCommand.cs" />
     <Compile Include="Assets\Scripts\Command\ChangeSceneCommand.cs" />
     <Compile Include="Assets\Scripts\Command\ClearMessageCommand.cs" />
     <Compile Include="Assets\Scripts\Command\MessageCommand.cs" />
@@ -72,9 +71,13 @@
     <Compile Include="Assets\Scripts\Command\ShowCharacterCommand.cs" />
     <Compile Include="Assets\Scripts\Command\StopSFXCommand.cs" />
     <Compile Include="Assets\Scripts\Command\WaitCommand.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\JsonNode.cs" />
-    <Compile Include="Assets\Scripts\ScenarioResource.cs" />
+    <Compile Include="Assets\Scripts\GameOver.cs" />
+    <Compile Include="Assets\Scripts\LoadingBar.cs" />
+    <Compile Include="Assets\Scripts\MiniGameManager.cs" />
+    <Compile Include="Assets\Scripts\System\BaseCommand.cs" />
+    <Compile Include="Assets\Scripts\System\GameManager.cs" />
+    <Compile Include="Assets\Scripts\System\JsonNode.cs" />
+    <Compile Include="Assets\Scripts\System\ScenarioResource.cs" />
     <None Include="Assets\Resources\テキストウィンドウ\MessageFrame_23\利用規約.txt" />
     <None Include="Assets\Resources\テキストウィンドウ\Messagerame_35\利用規約.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">

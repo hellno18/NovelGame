@@ -281,6 +281,13 @@
       "command_type": "click_wait"
     },
     {
+      "command_type": "message",
+      "text": "ここで何かミニゲーム　クリア後一同は2階の教室の中"
+    },
+    {
+      "command_type": "click_wait"
+    },
+    {
       "command_type": "change_scene",
       "id": "2"
     }

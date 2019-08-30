@@ -13,11 +13,9 @@ namespace Assets
         }
         public override void Run()
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                this.isEndGame = true;
-            }
-            else if (Input.GetKeyUp(KeyCode.LeftControl))
+            if (Input.GetMouseButtonDown(0)||
+                Input.GetKeyUp(KeyCode.LeftControl)||
+                Input.GetKeyUp(KeyCode.RightControl))
             {
                 this.isEndGame = true;
             }

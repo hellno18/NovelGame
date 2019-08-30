@@ -21,9 +21,16 @@ namespace Assets
                 }
                 else if (index == 2)
                 {
-                    SceneManager.LoadScene("Scene3");
+                    PlayerPrefs.SetInt("MiniGame", 1);
+                    SceneManager.LoadScene("LoadingScreen");
+                }
+                else if(index == 3)
+                {
+                    PlayerPrefs.SetInt("MiniGame", 3);
+                    SceneManager.LoadScene("LoadingScreen");
                 }
             }
+
 
         }
     }
