@@ -20,5 +20,15 @@ public class GameOver : MonoBehaviour
             PlayerPrefs.SetInt("MiniGame", 1);
             SceneManager.LoadScene("MiniGame1");
         }
+        else if (PlayerPrefs.GetInt("MiniGame") == 3)
+        {
+            PlayerPrefs.SetInt("MiniGame", 3);
+            SceneManager.LoadScene("MiniGame2");
+        }
+        else if (PlayerPrefs.GetInt("MiniGame") == 5)
+        {
+            PlayerPrefs.SetInt("MiniGame", 5);
+            SceneManager.LoadScene("MiniGame3");
+        }
     }
 }

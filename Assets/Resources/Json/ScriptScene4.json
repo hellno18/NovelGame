@@ -1,0 +1,454 @@
+{
+  "version": "1.0.0",
+  "commands": [
+    {
+      "command_type": "play_bgm",
+      "id": 5
+    },
+    {
+      "command_type": "show_background",
+      "id": 11
+    },
+    {
+      "command_type": "message",
+      "text": "どうして、あの幽霊は私たちを襲ってくるの? 私たちに何か恨みでもあるの?"
+    },
+    {
+      "command_type": "show_character",
+      "position": "left",
+      "chara_id": 0,
+      "id": 5,
+      "flip": "right"
+    },
+    {
+      "command_type": "message",
+      "text": "「ちょっと休憩してもいいかな？」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": 1,
+      "id": 4
+    },
+    {
+      "command_type": "message",
+      "text": "「ユキ、大丈夫？」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "「うん、大丈夫・・・ありがとう。」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "message",
+      "text": "「あの幽霊、まだ私たちのこと探し続けるよね？」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": 2,
+      "id": 4
+    },
+    {
+      "command_type": "message",
+      "text": "「恐らくね。早く名簿を探してここから離れましょう!」",
+      "name": "薫"
+    },
+    {
+      "command_type": "message",
+      "text": "「図書室はここみたい。中に入ろう！」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "show_background",
+      "id": -1
+    },
+    {
+      "command_type": "show_background",
+      "id": 21
+    },
+    {
+      "command_type": "message",
+      "text": "「おぉ。すごい。まだ沢山本が残ってるね。・・・あ、やばい臭い。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "「この本は恐らく30年以上前のものだから臭いのは仕方ないかもね。この部屋のどこかに名簿があると思うんだけど・・・」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "message",
+      "text": "「なんか宝さがしみたいね。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "「真剣に探しなさいよ全く・・・」",
+      "name": "薫"
+    },
+    {
+      "command_type": "message",
+      "text": "「一番早く見つけた人の勝ちね。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "show_character",
+      "position": "left",
+      "chara_id": -1
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": -1
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": -1
+    },
+    {
+      "command_type": "show_character",
+      "id": 1,
+      "position": "photo",
+      "chara_id": 3
+    },
+    {
+      "command_type": "message",
+      "text": "怜奈ちゃん、幽霊に遭遇してもこの調子だ。本当に楽しんじゃってるんじゃないかな・・・"
+    },
+    {
+      "command_type": "play_sfx",
+      "id": 13
+    },
+    {
+      "command_type": "message",
+      "text": "名簿の捜索から15分が経った。"
+    },
+    {
+      "command_type": "play_sfx",
+      "id": 13
+    },
+    {
+      "command_type": "show_character",
+      "position": "photo",
+      "chara_id": -1
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": 2,
+      "id": 4
+    },
+    {
+      "command_type": "message",
+      "text": "「何か見つかった？」",
+      "name": "薫"
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": 1,
+      "id": 4
+    },
+    {
+      "command_type": "message",
+      "text": "「ううん、何も。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "「ユキは？」",
+      "name": "薫"
+    },
+    {
+      "command_type": "play_sfx",
+      "id": 4
+    },
+    {
+      "command_type": "message",
+      "text": "「きゃあああ！」"
+    },
+    {
+      "command_type": "camera_shake",
+      "shake": "a"
+    },
+    {
+      "command_type": "click_wait"
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": 2,
+      "id": 3
+    },
+    {
+      "command_type": "message",
+      "text": "「ユキ！」",
+      "name": "薫"
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": 1,
+      "id": 2
+    },
+    {
+      "command_type": "message",
+      "text": "「ユキ、大丈夫？」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "show_character",
+      "position": "left",
+      "chara_id": 0,
+      "id": 5
+    },
+    {
+      "command_type": "message",
+      "text": "「いてて・・・脚立から落ちちゃった。」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "message",
+      "text": "「もうなにしてるのよ・・・」",
+      "name": "薫"
+    },
+    {
+      "command_type": "message",
+      "text": "「名簿を見つけて、これを取ろうと思ったの！」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "message",
+      "text": "「今回の勝負はユキの勝利だね～。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "「・・・・・・」",
+      "name": "薫"
+    },
+    {
+      "command_type": "message",
+      "text": "「あはは・・・冗談だって薫。怖いなぁ。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "「どうやらこれ以降の名簿はないみたい。」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "message",
+      "text": "「それってやっぱり25年前にこの学校で何かがあったからかもしれないわね。そして封鎖、放棄された。」",
+      "name": "薫"
+    },
+    {
+      "command_type": "message",
+      "text": "「そうみたいだね。」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": 1,
+      "id": 2
+    },
+    {
+      "command_type": "message",
+      "text": "「早く開いて見てみましょう。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "その名簿帳にはこの廃校の生徒らしき名前がクラス別に記載されていた。"
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": 1,
+      "id": 1
+    },
+    {
+      "command_type": "message",
+      "text": "「なにこれ？」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": 1,
+      "id": 0
+    },
+    {
+      "command_type": "message",
+      "text": "「えーと・・・「森田愛子さんを忘れないように。」かな？」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "message",
+      "text": "「事故についての記事・・・かしら？」",
+      "name": "薫"
+    },
+    {
+      "command_type": "message",
+      "text": "「早く開いて見てみましょう。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "「そうみたい。美術部のページにあった。死亡・森田愛子　死因は学校屋上からによる転落死　自殺」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": 2,
+      "id": 4
+    },
+    {
+      "command_type": "message",
+      "text": "「ひどいわね・・・」",
+      "name": "薫"
+    },
+    {
+      "command_type": "message",
+      "text": "「さらに調べてみたところ、森田愛子さんは自分が描いた絵をクラスメートに何度も 馬鹿にされていたことがあったみたい。それが死因なんじゃないかなって思うの。」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "message",
+      "text": "「あの幽霊は森田愛子さんってことになるの？」",
+      "name": "薫"
+    },
+    {
+      "command_type": "message",
+      "text": "「そうだと思う。 それに卒業式の時の写真もあったんだけど、ここに森田愛子さんが写っているの。この頃からもう幽霊になっていたのかも。」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "message",
+      "text": "「私、ちょっとかわいそうに思えてきたかも。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "「たしかにそうかもだけど・・・　でも彼女は己の憎悪のためだけにこの世に留まり続けてるんだと思う。」",
+      "name": "薫"
+    },
+    {
+      "command_type": "message",
+      "text": "「そうね・・・少なくとも私たちには敵意や殺意しかなかったかもね。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "「私は彼女を助けてあげたいんだけどな・・・」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": 2,
+      "id": 5
+    },
+    {
+      "command_type": "message",
+      "text": "「今となってはもう遅いわ、ユキ。残念だけど、あれに近づいたら間違いなく殺されるわ。」",
+      "name": "薫"
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": 1,
+      "id": 4
+    },
+    {
+      "command_type": "message",
+      "text": "「ユキ、逃げよう。自分たちの命のほうが大事。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "show_character",
+      "position": "left",
+      "chara_id": 0,
+      "id": 3
+    },
+    {
+      "command_type": "message",
+      "text": "「そう、だね・・・うん！逃げよう！」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": 2,
+      "id": 4
+    },
+    {
+      "command_type": "message",
+      "text": "「彼女は私たちを逃がさないでしょうね。」",
+      "name": "薫"
+    },
+    {
+      "command_type": "show_character",
+      "position": "left",
+      "chara_id": 0,
+      "id": 5
+    },
+    {
+      "command_type": "message",
+      "text": "「二人ともあそこ！通り抜けられそうな窓があるよ！」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "message",
+      "text": "「思ったより早く見つけられたわね。さあ、ここから出るわよ！」",
+      "name": "薫"
+    },
+    {
+      "command_type": "play_sfx",
+      "id": 8
+    },
+    {
+      "command_type": "message",
+      "text": "出口を目の前にしてまた鈍重なチャイム音が鳴り響いた。悲しい音。ある意味、愛子さんの悲痛な叫びなのかもしれない。でも、逃げなきゃ。ここで立ち止まることはできない。"
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": 1,
+      "id": 5
+    },
+    {
+      "command_type": "message",
+      "text": "「やはり彼女はこの階にいるみたいね。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "「まぁあっさり帰してはくれないとは思ってたけど。この呪縛から逃げ切ってみせる！」",
+      "name": "薫"
+    },
+    {
+      "command_type": "message",
+      "text": "「あ、あの窓の近くに！愛子さん！お願い、もうやめて！」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "ここで何かミニゲーム3　クリア後、学校の外(道路)"
+    },
+    {
+      "command_type": "click_wait"
+    },
+    {
+      "command_type": "change_scene",
+      "id": "4"
+    }
+  ]
+}

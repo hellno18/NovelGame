@@ -57,7 +57,7 @@ namespace Assets
             else if(Input.GetKeyUp(KeyCode.LeftControl) || (Input.GetKeyUp(KeyCode.RightControl)))
             {
                 m_skip = false;
-                Debug.Log(m_skip);
+
             }
             else if (Input.anyKey)
             {

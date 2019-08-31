@@ -17,6 +17,7 @@ public class MiniGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _currCount = 0;
         _health = this.transform.Find("Health").GetComponent<Image>();
         _audioSource = GameObject.Find("SFX").GetComponent<AudioSource>();
         resource = ScenarioResource.GetInstace();
@@ -99,11 +100,126 @@ public class MiniGameManager : MonoBehaviour
                 }
                 break;
             case 2:
-
+                if (_currCount < 4)
+                {
+                    if (_currCount == 0)
+                    {
+                        if (isButton[2])
+                        {
+                            _currCount += 1;
+                        }
+                        else
+                        {
+                            _currCount = 0;
+                            _health.fillAmount -= 0.35f;
+                            if (_health.fillAmount <= 0) StartCoroutine(FinishRoutine());
+                        }
+                    }
+                    else if (_currCount == 1)
+                    {
+                        if (isButton[0])
+                        {
+                            _currCount += 1;
+                        }
+                        else
+                        {
+                            _currCount = 0;
+                            _health.fillAmount -= 0.35f;
+                        }
+                    }
+                    else if (_currCount == 2)
+                    {
+                        if (isButton[2])
+                        {
+                            _currCount += 1;
+                        }
+                        else
+                        {
+                            _currCount = 0;
+                            _health.fillAmount -= 0.35f;
+                        }
+                    }
+                    else if (_currCount == 3)
+                    {
+                        if (isButton[1])
+                        {
+                            StartCoroutine(FinishRoutine());
+                        }
+                        else
+                        {
+                            _currCount = 0;
+                            _health.fillAmount -= 0.35f;
+                        }
+                    }
+                }
                 break;
-        }
-      
-           
+            case 3:
+                if (_currCount < 5)
+                {
+                    if (_currCount == 0)
+                    {
+                        if (isButton[0])
+                        {
+                            _currCount += 1;
+                        }
+                        else
+                        {
+                            _currCount = 0;
+                            _health.fillAmount -= 0.35f;
+                            if (_health.fillAmount <= 0) StartCoroutine(FinishRoutine());
+                        }
+                    }
+                    else if (_currCount == 1)
+                    {
+                        if (isButton[2])
+                        {
+                            _currCount += 1;
+                        }
+                        else
+                        {
+                            _currCount = 0;
+                            _health.fillAmount -= 0.35f;
+                        }
+                    }
+                    else if (_currCount == 2)
+                    {
+                        if (isButton[0])
+                        {
+                            _currCount += 1;
+                        }
+                        else
+                        {
+                            _currCount = 0;
+                            _health.fillAmount -= 0.35f;
+                        }
+                    }
+                    else if (_currCount == 3)
+                    {
+                        if (isButton[1])
+                        {
+                            _currCount += 1;
+                        }
+                        else
+                        {
+                            _currCount = 0;
+                            _health.fillAmount -= 0.35f;
+                        }
+                    }
+                    else if (_currCount == 4)
+                    {
+                        if (isButton[2])
+                        {
+                            StartCoroutine(FinishRoutine());
+                        }
+                        else
+                        {
+                            _currCount = 0;
+                            _health.fillAmount -= 0.35f;
+                        }
+                    }
+                }
+                break;
+        }  
     }
     
     IEnumerator ButtonRoutine()
@@ -124,9 +240,21 @@ public class MiniGameManager : MonoBehaviour
             //Failed
             SceneManager.LoadScene("GameOver");
         }
-        else 
+        else if(_miniGameStage==1)
         {
             PlayerPrefs.SetInt("MiniGame", 2);
+            //Clear Game
+            SceneManager.LoadScene("LoadingScreen");
+        }
+        else if (_miniGameStage == 2)
+        {
+            PlayerPrefs.SetInt("MiniGame", 4);
+            //Clear Game
+            SceneManager.LoadScene("LoadingScreen");
+        }
+        else if (_miniGameStage == 3)
+        {
+            PlayerPrefs.SetInt("MiniGame", 6);
             //Clear Game
             SceneManager.LoadScene("LoadingScreen");
         }

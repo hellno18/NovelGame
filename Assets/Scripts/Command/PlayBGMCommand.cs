@@ -42,9 +42,7 @@ namespace Assets
             }
 
             isEndGame = true;
-
-
-
+            
         }
     }
 }

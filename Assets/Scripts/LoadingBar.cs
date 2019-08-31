@@ -39,7 +39,8 @@ public class LoadingBar : MonoBehaviour
     {
         _timerText.text = "終了";
         yield return new WaitForSeconds(1f);
-        if (PlayerPrefs.GetInt("MiniGame") == 1)
+        if (PlayerPrefs.GetInt("MiniGame") == 0) SceneManager.LoadScene("Scene1");
+        else if (PlayerPrefs.GetInt("MiniGame") == 1)
         {
             SceneManager.LoadScene("MiniGame1");
         }
@@ -50,6 +51,18 @@ public class LoadingBar : MonoBehaviour
         else if (PlayerPrefs.GetInt("MiniGame") == 3)
         {
             SceneManager.LoadScene("MiniGame2");
+        }
+        else if (PlayerPrefs.GetInt("MiniGame") == 4)
+        {
+            SceneManager.LoadScene("Scene4");
+        }
+        else if (PlayerPrefs.GetInt("MiniGame") == 5)
+        {
+            SceneManager.LoadScene("MiniGame3");
+        }
+        else if (PlayerPrefs.GetInt("MiniGame") == 6)
+        {
+            SceneManager.LoadScene("Scene5");
         }
     }
 }

@@ -1,0 +1,194 @@
+{
+  "version": "1.0.0",
+  "commands": [
+    {
+      "command_type": "play_bgm",
+      "id": 8
+    },
+    {
+      "command_type": "show_background",
+      "id": 0
+    },
+    {
+      "command_type": "message",
+      "text": "私たちは決死の思いで学校から抜け出した。その瞬間、私たちに安堵が込み上げてきた。"
+    },
+    {
+      "command_type": "show_character",
+      "position": "left",
+      "chara_id": 0,
+      "id": 4,
+      "flip": "right"
+    },
+    {
+      "command_type": "message",
+      "text": "「や・・・やっと出れた！」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": 1,
+      "id": 0
+    },
+    {
+      "command_type": "message",
+      "text": "「出てこれた。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": 2,
+      "id": 0
+    },
+    {
+      "command_type": "message",
+      "text": "「信じられないわ・・・」",
+      "name": "薫"
+    },
+    {
+      "command_type": "show_background",
+      "id": -1
+    },
+    {
+      "command_type": "show_background",
+      "id": 23
+    },
+    {
+      "command_type": "message",
+      "text": "「もうとっくのとうに朝だね・・・お母さんに心配かけちゃったなぁ・・・」",
+      "name": "ユキ"
+    },
+
+    {
+      "command_type": "message",
+      "text": "「母さん怒ってるだろうなぁ・・・」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "「心配してるんじゃないの？」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "message",
+      "text": "「いや、絶対怒ってる。このままじゃ幽霊じゃなくて母さんに殺されちゃうよ・・・」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "show_character",
+      "position": "left",
+      "chara_id": 0,
+      "id": 0
+    },
+    {
+      "command_type": "message",
+      "text": "「あははは・・・」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": 2,
+      "id": 3
+    },
+    {
+      "command_type": "message",
+      "text": "「はぁー疲れた。早く帰ってもう寝たいわ。」",
+      "name": "薫"
+    },
+    {
+      "command_type": "message",
+      "text": "「私は今日の出来事を夢で思い出したくないなぁ・・・」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "message",
+      "text": "「ならユキちゃん。私と一緒に寝るかい？」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "「遠慮します。」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "message",
+      "text": "「冗談だよー。じゃあ最後に生還を記念して写真を撮ろー。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "「まったく。最後までマイペースなんだから。」",
+      "name": "薫"
+    },
+    {
+      "command_type": "message",
+      "text": "「いいじゃん薫ー。ほら、二人とももっと寄って！はい、チーズ！」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "play_sfx",
+      "id": 14
+    },
+    {
+      "command_type": "message",
+      "text": "「ありがとねー。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "「私はもう帰るわね。それじゃ、また学校で。」",
+      "name": "薫"
+    },
+    {
+      "command_type": "message",
+      "text": "「うん!薫ちゃん、気を付けてね！」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "message",
+      "text": "「あなたたちもね！」",
+      "name": "薫"
+    },
+    {
+      "command_type": "message",
+      "text": "「ばいばーい。ユキ、一緒に帰らない？」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "「うん、いいよ！」",
+      "name": "ユキ"
+    },
+    {
+      "command_type": "message",
+      "text": "「やったー。ねぇねぇドーナツ食べようよー。お腹すいちゃった。」",
+      "name": "怜奈"
+    },
+    {
+      "command_type": "message",
+      "text": "これで、私たちの生死を懸けた肝試しは終わった。このことは3人だけの秘密にし、友達どころか家族にも話さなかった。・・・私たちは愛子さんを救うことができなかった。怖かった。"
+    },
+    {
+      "command_type": "message",
+      "text": "助け方が分からなかったというのもある。それでもあの人を救ってあげたかった。"
+    },
+    {
+      "command_type": "message",
+      "text": "復讐のためだけの怨霊になってしまったのは残念だけど、森田愛子さん、私たちはあなたが天国に旅立てるようにご冥福を祈り続けています。・・・・・・・これですべて終わりだと思っていた。"
+    },
+    {
+      "command_type": "message",
+      "text": "そう。最後に3人で撮ったあの写真をもう一度見るまでは・・・・・・・・・・"
+    },
+    {
+      "command_type": "message",
+      "text": "終わりは怜奈の携帯で撮った写真を表示。3人の後ろには幽霊の姿が・・・"
+    },
+    {
+      "command_type": "clear_message"
+    }
+  ]
+}
