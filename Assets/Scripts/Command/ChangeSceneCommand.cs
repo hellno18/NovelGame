@@ -7,8 +7,10 @@ namespace Assets
 {
     class ChangeSceneCommand : BaseCommand
     {
+        float _timer;
         public ChangeSceneCommand(GameObject root, IDictionary command) : base(root, command)
         {
+            _timer = 2f;
         }
         public override void Run()
         {
@@ -34,9 +36,24 @@ namespace Assets
                     PlayerPrefs.SetInt("MiniGame", 5);
                     SceneManager.LoadScene("LoadingScreen");
                 }
+                else if (index == 5)
+                {
+                    _timer -= Time.deltaTime;
+                    PlayerPrefs.SetInt("MiniGame", 7);
+                    Debug.Log(_timer);
+                    if (_timer < 0)
+                    {
+                        SceneManager.LoadScene("LoadingScreen");
+                    }
+                   
+                 
+                   
+                }
+                
             }
 
 
         }
+      
     }
 }

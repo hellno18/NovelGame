@@ -64,5 +64,9 @@ public class LoadingBar : MonoBehaviour
         {
             SceneManager.LoadScene("Scene5");
         }
+        else if (PlayerPrefs.GetInt("MiniGame") == 7)
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 }

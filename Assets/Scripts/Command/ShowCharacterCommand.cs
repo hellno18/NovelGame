@@ -40,6 +40,10 @@ namespace Assets
                 case "photo":
                     characterImage = root.transform.Find("Photo").GetComponent<Image>();
                     break;
+                case "ghost":
+                    characterImage = root.transform.Find("Ghost").GetComponent<Image>();
+                    characterImage.gameObject.SetActive(true);
+                    break;
                 default:
                     return;
             }
@@ -52,7 +56,6 @@ namespace Assets
             if (command["id"] != null)
             {
                 index = Convert.ToInt32(command["id"]);
-                
             }
             else
             {

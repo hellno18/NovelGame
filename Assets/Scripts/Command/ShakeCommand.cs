@@ -10,9 +10,11 @@ namespace Assets
         //TODO CAMERA SHAKE
         private bool _isShake=false;
         Image _camera;
+        private Image m_arrow;
         public ShakeCommand(GameObject root, IDictionary command) : base(root, command)
         {
             _camera = root.transform.Find("BG").GetComponent<Image>();
+            m_arrow = root.transform.Find("ArrowClick").GetComponent<Image>();
         }
         public override void Run()
         {
@@ -31,11 +33,12 @@ namespace Assets
                 {
                     _camera.transform.localPosition = new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), Random.Range(-5, 5)) * 0.3f;
                 }
-
+                m_arrow.gameObject.SetActive(true);
                 if (Input.GetMouseButtonDown(0)|| 
                     Input.GetKeyDown(KeyCode.LeftControl)||
                     Input.GetKeyDown(KeyCode.RightControl))
                 {
+                   
                     isEndGame = true;
                 }
             }

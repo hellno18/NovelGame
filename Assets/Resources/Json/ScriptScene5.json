@@ -168,6 +168,21 @@
       "name": "怜奈"
     },
     {
+      "command_type": "show_character",
+      "position": "left",
+      "chara_id": -1
+    },
+    {
+      "command_type": "show_character",
+      "position": "center",
+      "chara_id": -1
+    },
+    {
+      "command_type": "show_character",
+      "position": "right",
+      "chara_id": -1
+    },
+    {
       "command_type": "message",
       "text": "これで、私たちの生死を懸けた肝試しは終わった。このことは3人だけの秘密にし、友達どころか家族にも話さなかった。・・・私たちは愛子さんを救うことができなかった。怖かった。"
     },
@@ -189,6 +204,27 @@
     },
     {
       "command_type": "clear_message"
+    },
+    {
+      "command_type": "play_bgm",
+      "id": 5
+    },
+    {
+      "command_type": "play_sfx",
+      "id": 5
+    },
+    {
+      "command_type": "show_character",
+      "position": "ghost",
+      "id": 1
+    },
+    {
+      "command_type": "camera_shake",
+      "shake": "a"
+    },
+    {
+      "command_type": "change_scene",
+      "id": "5"
     }
   ]
 }
