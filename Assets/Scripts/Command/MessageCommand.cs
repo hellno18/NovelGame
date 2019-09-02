@@ -58,6 +58,15 @@ namespace Assets
                 }
                 
             }
+            else
+            {
+                if (Input.GetMouseButtonUp(0))
+                {
+                    this.isEndGame = true;
+                    m_arrow.gameObject.SetActive(false);
+                }
+            }
+
             if (!manager.GetIsOnAuto)
             {
                 if (Input.GetKeyUp(KeyCode.LeftControl) || (Input.GetKeyUp(KeyCode.RightControl)))
@@ -78,14 +87,6 @@ namespace Assets
                     }
                 }
 
-                else
-                {
-                    if (Input.GetMouseButtonUp(0))
-                    {
-                        this.isEndGame = true;
-                        m_arrow.gameObject.SetActive(false);
-                    }
-                }
             }
             else if(manager.GetIsOnAuto)
             {
@@ -96,6 +97,7 @@ namespace Assets
                     this.isEndGame = true;
                 }
             }
+
             if (manager.GetIsOnSkip)
             {
                 m_timerSkip -= Time.deltaTime;
