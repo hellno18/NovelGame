@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     private JsonNode m_json;
     private List<BaseCommand> commandList;
     private int commandIndex;
+    bool isOnAuto = false;
+    bool isOnSkip = false;
+
 
     private static Dictionary<string, Type> CommandTable = new Dictionary<string, Type>
     {
@@ -33,6 +36,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //0 false | 1 true
+        PlayerPrefs.SetInt("Auto", 0);
         //set to default 
         PlayerPrefs.SetInt("MiniGame", 1);
         ScenarioResource resource = ScenarioResource.GetInstace();
@@ -64,7 +69,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!m_currentCommand.GetBool)
+        if (!m_currentCommand.GetEndGame)
         {
             m_currentCommand.Run();
         }
@@ -83,6 +88,47 @@ public class GameManager : MonoBehaviour
             m_currentCommand = commandList[commandIndex];
             commandIndex++;
         }
+    }
+
+    public void AutoButton()
+    {
+        isOnSkip = false;
+        if (isOnAuto)
+        {
+            isOnAuto = false;
+            Debug.Log(isOnAuto);
+        }
+        else
+        {
+            isOnAuto = true;
+            Debug.Log(isOnAuto);
+        }
+    }
+
+    public void SkipButton()
+    {
+        isOnAuto=false;
+        if (isOnSkip)
+        {
+            isOnSkip = false;
+            Debug.Log(isOnSkip);
+        }
+        else
+        {
+            isOnAuto = false;
+            isOnSkip = true;
+            Debug.Log(isOnSkip);
+        }
+    }
+
+    public bool GetIsOnSkip
+    {
+        get { return isOnSkip; }
+    }
+
+    public bool GetIsOnAuto
+    {
+        get { return isOnAuto; }
     }
 
 

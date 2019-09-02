@@ -10,13 +10,14 @@ namespace Assets
         protected GameObject root;
         protected IDictionary command;
         protected bool isEndGame = false;
-                
+
         //contructor
         public BaseCommand(GameObject root,IDictionary command)
         {
             //gameobject contructor
             this.root = root;
             this.command = command;
+            
         }
 
         public virtual void Run()
@@ -25,9 +26,11 @@ namespace Assets
             isEndGame = true;
         }
 
-        public bool GetBool
+        public bool GetEndGame
         {
             get { return isEndGame; }
         }
+        
+
     }
 }

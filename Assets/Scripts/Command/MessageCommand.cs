@@ -7,20 +7,25 @@ namespace Assets
 {
     class MessageCommand: BaseCommand
     {
+        GameManager manager;
+        
         private bool m_isAnimationPlay = true;
         private bool m_skip = false;
         private int m_messageLength = 0;
-        float m_timer = 0.05f;
+        private float m_timer = 0.05f;
+        private float m_timerAuto=1.5f;
+        private float m_timerSkip = 0.09f;
         private Text m_messageText;
         private Text m_characterName;
         private int index;
         private Image m_arrow;
         public MessageCommand(GameObject root, IDictionary command) :base(root, command)
         {
-           
+            
             m_messageText = root.transform.Find("TextOut/Message").GetComponent<Text>();
             m_characterName = root.transform.Find("TextOut/NamePerson").GetComponent<Text>();
             m_arrow = root.transform.Find("ArrowClick").GetComponent<Image>();
+            manager = GameObject.Find("Canvas").GetComponent<GameManager>();
         }
         
         public override void Run()
@@ -53,34 +58,57 @@ namespace Assets
                 }
                 
             }
-
-            else if(Input.GetKeyUp(KeyCode.LeftControl) || (Input.GetKeyUp(KeyCode.RightControl)))
+            if (!manager.GetIsOnAuto)
             {
-                m_skip = false;
-
-            }
-            else if (Input.anyKey)
-            {
-                foreach (KeyCode kcode in Enum.GetValues(typeof(KeyCode)))
+                if (Input.GetKeyUp(KeyCode.LeftControl) || (Input.GetKeyUp(KeyCode.RightControl)))
                 {
-                    if (Input.GetKey(KeyCode.LeftControl) || (Input.GetKey(KeyCode.RightControl)))
+                    m_skip = false;
+
+                }
+                else if (Input.anyKey)
+                {
+                    foreach (KeyCode kcode in Enum.GetValues(typeof(KeyCode)))
+                    {
+                        if (Input.GetKey(KeyCode.LeftControl) || (Input.GetKey(KeyCode.RightControl)))
+                        {
+                            this.isEndGame = true;
+                            m_arrow.gameObject.SetActive(false);
+                            m_skip = true;
+                        }
+                    }
+                }
+
+                else
+                {
+                    if (Input.GetMouseButtonUp(0))
                     {
                         this.isEndGame = true;
                         m_arrow.gameObject.SetActive(false);
-                        m_skip = true;
                     }
                 }
             }
-         
-            else
+            else if(manager.GetIsOnAuto)
             {
-                if (Input.GetMouseButtonUp(0))
+                m_timerAuto -= Time.deltaTime;
+                if (m_timerAuto < 0)
                 {
+                    m_timerAuto = 1.5f;
                     this.isEndGame = true;
-                    m_arrow.gameObject.SetActive(false);
                 }
             }
+            if (manager.GetIsOnSkip)
+            {
+                m_timerSkip -= Time.deltaTime;
+                if (m_timerSkip < 0)
+                {
+                    m_timerSkip = 0.09f;
+                    this.isEndGame = true;
+                }
+            }
+
         }
+
+        
 
 
     }
