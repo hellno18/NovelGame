@@ -20,8 +20,8 @@ namespace Assets
 
         public override void Run()
         {
+            bgm.volume = PlayerPrefs.GetFloat("bgm");
             // 1 : default bgm , -1 : stop
-            
             int index=-1;
             ScenarioResource resource = ScenarioResource.GetInstace();
             if (command["id"] != null)

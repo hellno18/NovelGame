@@ -2,11 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Assets;
 
 public class GameOver : MonoBehaviour
 {
+    AudioSource audioSourceSFX;
+    AudioSource audioSourceBGM;
 
+    ScenarioResource resource;
     // Update is called once per frame
+    private void Start()
+    {
+        audioSourceSFX = GameObject.Find("SFX").GetComponent<AudioSource>();
+        audioSourceBGM = this.transform.GetComponent<AudioSource>();
+        audioSourceSFX.volume = PlayerPrefs.GetFloat("sfx");
+        audioSourceBGM.volume = PlayerPrefs.GetFloat("bgm");
+        resource = ScenarioResource.GetInstace();
+        resource.Load();
+        audioSourceSFX.PlayOneShot(resource.GetSFX(5));
+        audioSourceBGM.clip = resource.GetBGM(6);
+        audioSourceBGM.Play();
+    }
     void Update()
     {
         StartCoroutine(SceneRoutine());

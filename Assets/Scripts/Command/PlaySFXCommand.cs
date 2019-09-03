@@ -20,6 +20,7 @@ namespace Assets
 
         public override void Run()
         {
+            se.volume = PlayerPrefs.GetFloat("sfx");
             // 1 : default bgm , -1 : stop
 
             int index = -1;

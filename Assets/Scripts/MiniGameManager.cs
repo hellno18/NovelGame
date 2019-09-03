@@ -10,7 +10,8 @@ public class MiniGameManager : MonoBehaviour
     [SerializeField] private int _miniGameStage;
     private int _currCount=0;
     private Image _health;
-    private AudioSource _audioSource;
+    private AudioSource _audioSourceBGM;
+    private AudioSource _audioSourceSFX;
     private bool[] isButton = new bool[3];
     ScenarioResource resource;
     AudioClip audioClip;
@@ -19,16 +20,21 @@ public class MiniGameManager : MonoBehaviour
     {
         _currCount = 0;
         _health = this.transform.Find("Health").GetComponent<Image>();
-        _audioSource = GameObject.Find("SFX").GetComponent<AudioSource>();
+        _audioSourceBGM = this.GetComponent<AudioSource>();
+        _audioSourceSFX = GameObject.Find("SFX").GetComponent<AudioSource>();
+        _audioSourceSFX.volume = PlayerPrefs.GetFloat("sfx");
+        _audioSourceBGM.volume = PlayerPrefs.GetFloat("bgm");
         resource = ScenarioResource.GetInstace();
         resource.Load();
         audioClip = resource.GetSFX(1);
+        _audioSourceBGM.clip= resource.GetBGM(3);
+        _audioSourceBGM.Play();
     }
 
     public void UpButton()
     {
         //play sfx
-        _audioSource.PlayOneShot(audioClip);
+        _audioSourceSFX.PlayOneShot(audioClip);
 
         isButton[0] = true;
         Run();
@@ -37,7 +43,7 @@ public class MiniGameManager : MonoBehaviour
     public void LeftButton()
     {
         //play sfx
-        _audioSource.PlayOneShot(audioClip);
+        _audioSourceSFX.PlayOneShot(audioClip);
         isButton[1] = true;
         Run();
         StartCoroutine(ButtonRoutine());
@@ -45,7 +51,7 @@ public class MiniGameManager : MonoBehaviour
     public void RightButton()
     {
         //play sfx
-        _audioSource.PlayOneShot(audioClip);
+        _audioSourceSFX.PlayOneShot(audioClip);
         isButton[2] = true;
         Run();
         StartCoroutine(ButtonRoutine());
@@ -229,12 +235,12 @@ public class MiniGameManager : MonoBehaviour
         {
             isButton[i] = false;
         }
-        _audioSource.Stop();
+        _audioSourceSFX.Stop();
     }
     IEnumerator FinishRoutine()
     {
         yield return new WaitForSeconds(1f);
-        _audioSource.Stop();
+        _audioSourceSFX.Stop();
         if (_health.fillAmount <= 0)
         {
             //Failed
