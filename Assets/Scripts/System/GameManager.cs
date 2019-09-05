@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     private int commandIndex;
     bool isOnAuto = false;
     bool isOnSkip = false;
-
+    bool isPause = false;
 
     private static Dictionary<string, Type> CommandTable = new Dictionary<string, Type>
     {
@@ -96,12 +96,12 @@ public class GameManager : MonoBehaviour
         if (isOnAuto)
         {
             isOnAuto = false;
-            Debug.Log(isOnAuto);
+
         }
         else
         {
             isOnAuto = true;
-            Debug.Log(isOnAuto);
+
         }
     }
 
@@ -111,13 +111,27 @@ public class GameManager : MonoBehaviour
         if (isOnSkip)
         {
             isOnSkip = false;
-            Debug.Log(isOnSkip);
+            
         }
         else
         {
             isOnAuto = false;
             isOnSkip = true;
-            Debug.Log(isOnSkip);
+
+        }
+    }
+
+    public void PauseButton()
+    {
+        if (isPause)
+        {
+            isPause = false;
+
+        }
+        else
+        {
+            isPause = true;
+
         }
     }
 
@@ -131,6 +145,14 @@ public class GameManager : MonoBehaviour
         get { return isOnAuto; }
     }
 
-
+    public bool GetIsPause
+    {
+        get { return isPause; }
+    }
+    
+    public void SetIsPause(bool ispause)
+    {
+        isPause = ispause;
+    }
 
 }

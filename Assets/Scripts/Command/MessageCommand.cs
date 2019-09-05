@@ -8,7 +8,6 @@ namespace Assets
     class MessageCommand: BaseCommand
     {
         GameManager manager;
-        private bool isPause=false;
         private bool m_isAnimationPlay = true;
         private bool m_skip = false;
         private int m_messageLength = 0;
@@ -20,18 +19,25 @@ namespace Assets
         private int index;
         private Image m_arrow;
         private Image box;
+        Button skip;
+        Button auto;
+
+
         public MessageCommand(GameObject root, IDictionary command) :base(root, command)
         {
-            
             m_messageText = root.transform.Find("TextOut/Message").GetComponent<Text>();
             m_characterName = root.transform.Find("TextOut/NamePerson").GetComponent<Text>();
             m_arrow = root.transform.Find("ArrowClick").GetComponent<Image>();
             box = root.transform.Find("TextOut").GetComponent<Image>();
+            skip= root.transform.Find("TextOut/SkipButton").GetComponent<Button>();
+            auto = root.transform.Find("TextOut/AutoButton").GetComponent<Button>();
             manager = GameObject.Find("Canvas").GetComponent<GameManager>();
+           
         }
-        
+
         public override void Run()
         {
+
             if (m_isAnimationPlay)
             {
                 string nameChar= "";
@@ -40,8 +46,7 @@ namespace Assets
                     nameChar = this.command["name"].ToString();
                 }
                 m_characterName.text = nameChar;
-
-
+                
                 string currentMessage = (string)this.command["text"];
                 m_messageText.text = currentMessage.Substring(0, m_messageLength);
                 m_timer -= Time.deltaTime;
@@ -50,43 +55,39 @@ namespace Assets
                 {
                     if(!m_skip) m_timer = 0.05f;
                     else m_timer = 0.1f;
+
                     m_messageLength++;
                 }
 
                 if ( currentMessage.Length< m_messageLength)
                 {
+                   
                     m_isAnimationPlay = false;
                     m_arrow.gameObject.SetActive(true);
                 }
                 
             }
-            else if(Input.GetMouseButtonDown(1)){
-                if (!isPause)
-                {
-                    isPause = true;
-                    box.gameObject.SetActive(false);
-                    m_arrow.gameObject.SetActive(false);
-                    
-                    this.isEndGame = false;
-                }
-                else
-                {
-                    isPause = false;
-                    box.gameObject.SetActive(true);
-                    m_arrow.gameObject.SetActive(true);
-                    
-                }
+            else if (Input.GetMouseButtonDown(1))
+            {
+                PauseSystem();
+            }
+            else if (manager.GetIsPause)
+            {
+                auto.interactable = false;
+                skip.interactable = false;
+                this.isEndGame = false;
             }
             else
             {
-                if (Input.GetMouseButtonUp(0)&&!isPause)
+                auto.interactable = true;
+                skip.interactable = true;
+                if (Input.GetMouseButtonUp(0)&&!manager.GetIsPause)
                 {
                     this.isEndGame = true;
                     m_arrow.gameObject.SetActive(false);
-
                 }
             }
-
+            
             if (!manager.GetIsOnAuto)
             {
                 if (Input.GetKeyUp(KeyCode.LeftControl) || (Input.GetKeyUp(KeyCode.RightControl)))
@@ -94,7 +95,7 @@ namespace Assets
                     m_skip = false;
 
                 }
-                else if (Input.anyKey && !isPause)
+                else if (Input.anyKey && !manager.GetIsPause)
                 {
                     foreach (KeyCode kcode in Enum.GetValues(typeof(KeyCode)))
                     {
@@ -130,7 +131,25 @@ namespace Assets
 
         }
 
-        
+        private void PauseSystem()
+        {
+            if (!manager.GetIsPause)
+            {
+                manager.SetIsPause(true);
+                box.gameObject.SetActive(false);
+                m_arrow.gameObject.SetActive(false);
+
+                this.isEndGame = false;
+            }
+            else
+            {
+                manager.SetIsPause(false);
+                box.gameObject.SetActive(true);
+                m_arrow.gameObject.SetActive(true);
+
+            }
+        }
+
 
 
     }
