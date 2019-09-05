@@ -74,7 +74,7 @@ namespace Assets
                     isPause = false;
                     box.gameObject.SetActive(true);
                     m_arrow.gameObject.SetActive(true);
-                    this.isEndGame = true;
+                    
                 }
             }
             else
