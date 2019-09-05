@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Assets;
+
 public class LoadingBar : MonoBehaviour
 {
     // 1 : minigame1 
@@ -10,16 +12,29 @@ public class LoadingBar : MonoBehaviour
     private Image _filledImage;
     private Text _timerText;
     private int _speed=20;
+    private int _random;
+    ScenarioResource resource;
+    Image _background;
     // Start is called before the first frame update
     void Start()
     {
         _filledImage = this.transform.Find("Red").GetComponent<Image>();
         _timerText= this.transform.Find("White/Text").GetComponent<Text>();
+
+        //resource load
+        resource = ScenarioResource.GetInstace();
+        resource.Load();
+
+        _random = Random.Range(20, 24);
+        _background = this.transform.Find("BG").GetComponent<Image>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        _background.sprite = resource.GetBackground(_random);
+
+        //Loading system
         if (_currentValue < 100)
         {
             _currentValue += _speed*Time.deltaTime;
