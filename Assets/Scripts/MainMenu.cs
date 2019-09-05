@@ -24,6 +24,8 @@ public class MainMenu : MonoBehaviour
     Slider sliderBGM;
     Slider sliderSFX;
     Dropdown dropDown;
+    Text bgmText;
+    Text sfxText;
     private void Awake()
     {
         _indexBGM = 12;
@@ -37,6 +39,8 @@ public class MainMenu : MonoBehaviour
         sliderBGM = this.transform.Find("PanelOption/SliderBGM").GetComponent<Slider>();
         sliderSFX = this.transform.Find("PanelOption/SliderSFX").GetComponent<Slider>();
         dropDown = this.transform.Find("PanelOption/Dropdown").GetComponent<Dropdown>();
+        bgmText = this.transform.Find("PanelOption/bgmText").GetComponent<Text>();
+        sfxText= this.transform.Find("PanelOption/sfxText").GetComponent<Text>();
 
         if (!PlayerPrefs.HasKey("bgm")|| !PlayerPrefs.HasKey("sfx"))
         {
@@ -64,6 +68,11 @@ public class MainMenu : MonoBehaviour
         audioSourceBGM.volume = PlayerPrefs.GetFloat("bgm");
         //Update float SFX
         audioSourceSFX.volume = PlayerPrefs.GetFloat("sfx");
+        //Printed on bgmText
+        bgmText.text = Mathf.RoundToInt(PlayerPrefs.GetFloat("bgm")*100).ToString()+"%";
+        //Printed on sfxText
+        sfxText.text = Mathf.RoundToInt(PlayerPrefs.GetFloat("sfx") * 100).ToString() + "%";
+
     }
 
     public void DropDown(Dropdown dropdown)
