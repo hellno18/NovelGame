@@ -8,7 +8,7 @@ namespace Assets
     class MessageCommand: BaseCommand
     {
         GameManager manager;
-        
+        private bool isPause=false;
         private bool m_isAnimationPlay = true;
         private bool m_skip = false;
         private int m_messageLength = 0;
@@ -19,12 +19,14 @@ namespace Assets
         private Text m_characterName;
         private int index;
         private Image m_arrow;
+        private Image box;
         public MessageCommand(GameObject root, IDictionary command) :base(root, command)
         {
             
             m_messageText = root.transform.Find("TextOut/Message").GetComponent<Text>();
             m_characterName = root.transform.Find("TextOut/NamePerson").GetComponent<Text>();
             m_arrow = root.transform.Find("ArrowClick").GetComponent<Image>();
+            box = root.transform.Find("TextOut").GetComponent<Image>();
             manager = GameObject.Find("Canvas").GetComponent<GameManager>();
         }
         
@@ -58,12 +60,30 @@ namespace Assets
                 }
                 
             }
+            else if(Input.GetMouseButtonDown(1)){
+                if (!isPause)
+                {
+                    isPause = true;
+                    box.gameObject.SetActive(false);
+                    m_arrow.gameObject.SetActive(false);
+                    
+                    this.isEndGame = false;
+                }
+                else
+                {
+                    isPause = false;
+                    box.gameObject.SetActive(true);
+                    m_arrow.gameObject.SetActive(true);
+                    this.isEndGame = true;
+                }
+            }
             else
             {
-                if (Input.GetMouseButtonUp(0))
+                if (Input.GetMouseButtonUp(0)&&!isPause)
                 {
                     this.isEndGame = true;
                     m_arrow.gameObject.SetActive(false);
+
                 }
             }
 
@@ -74,7 +94,7 @@ namespace Assets
                     m_skip = false;
 
                 }
-                else if (Input.anyKey)
+                else if (Input.anyKey && !isPause)
                 {
                     foreach (KeyCode kcode in Enum.GetValues(typeof(KeyCode)))
                     {

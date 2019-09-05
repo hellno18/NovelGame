@@ -40,7 +40,7 @@ public class LoadingBar : MonoBehaviour
             _currentValue += _speed*Time.deltaTime;
             _timerText.text = ((int)_currentValue).ToString();
             
-            Debug.Log(_currentValue / 100);
+            //Debug.Log(_currentValue / 100);
         }
         else
         {
