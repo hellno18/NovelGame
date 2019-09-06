@@ -7,7 +7,7 @@ namespace Assets
 {
     class MessageCommand: BaseCommand
     {
-        GameManager manager;
+        private GameManager manager;
         private bool m_isAnimationPlay = true;
         private bool m_skip = false;
         private int m_messageLength = 0;
@@ -19,9 +19,10 @@ namespace Assets
         private int index;
         private Image m_arrow;
         private Image box;
-       
-        Button skip;
-        Button auto;
+        private Image logPanel;
+        private Button skip;
+        private Button auto;
+        private Button log;
         
 
         public MessageCommand(GameObject root, IDictionary command) :base(root, command)
@@ -32,13 +33,14 @@ namespace Assets
             box = root.transform.Find("TextOut").GetComponent<Image>();
             skip= root.transform.Find("TextOut/SkipButton").GetComponent<Button>();
             auto = root.transform.Find("TextOut/AutoButton").GetComponent<Button>();
+            log = root.transform.Find("TextOut/LogButton").GetComponent<Button>();
+            logPanel = root.transform.Find("Panel").GetComponent<Image>();
             manager = GameObject.Find("Canvas").GetComponent<GameManager>();
            
         }
 
         public override void Run()
         {
-
             if (m_isAnimationPlay)
             {
                 string nameChar= "";
@@ -61,7 +63,6 @@ namespace Assets
 
                 if ( currentMessage.Length< m_messageLength)
                 {
-                   
                     m_isAnimationPlay = false;
                     m_arrow.gameObject.SetActive(true);
                 }
@@ -73,33 +74,20 @@ namespace Assets
             }
             else if (manager.GetIsPause)
             {
+                log.interactable = false;
                 auto.interactable = false;
                 skip.interactable = false;
                 this.isEndGame = false;
             }
             else
             {
+                log.interactable = true;
                 auto.interactable = true;
                 skip.interactable = true;
                 if (Input.GetMouseButtonUp(0)||Input.GetKeyDown(KeyCode.LeftControl) ||
                     (Input.GetKeyDown(KeyCode.RightControl)) && !manager.GetIsPause)
                 {
-                    if (m_characterName.text == "ユキ")
-                    {
-                        manager.SetLogList("ユキ： " + command["text"].ToString());
-                    }
-                    else if(m_characterName.text == "玲奈")
-                    {
-                        
-                    }
-                    else if (m_characterName.text == "薫")
-                    {
-
-                    }
-                    else
-                    {
-
-                    }
+                    LogSystem();
                     this.isEndGame = true;
                     m_arrow.gameObject.SetActive(false);
                 }
@@ -123,6 +111,10 @@ namespace Assets
                             m_skip = true;
                         }
                     }
+                    if (this.isEndGame)
+                    {
+                        LogSystem();
+                    }
                 }
 
             }
@@ -136,22 +128,7 @@ namespace Assets
                 }
                 if (this.isEndGame)
                 {
-                    if (m_characterName.text == "ユキ")
-                    {
-                        manager.SetLogList("ユキ： " + command["text"].ToString());
-                    }
-                    else if (m_characterName.text == "玲奈")
-                    {
-
-                    }
-                    else if (m_characterName.text == "薫")
-                    {
-
-                    }
-                    else
-                    {
-
-                    }
+                    LogSystem();
                 }
             }
 
@@ -163,8 +140,44 @@ namespace Assets
                     m_timerSkip = 0.09f;
                     this.isEndGame = true;
                 }
+                if (this.isEndGame)
+                {
+                    LogSystem();
+                }
             }
 
+            if (Input.GetAxisRaw("Mouse ScrollWheel") > 0)
+            {
+                logPanel.gameObject.SetActive(true);
+                manager.SetIsPause(true);
+
+            }
+            else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0)
+            {
+                logPanel.gameObject.SetActive(false);
+                manager.SetIsPause(false);
+            }
+
+        }
+
+        private void LogSystem()
+        {
+            if (m_characterName.text == "ユキ")
+            {
+                manager.SetLogList("ユキ： " + command["text"].ToString());
+            }
+            else if (m_characterName.text == "怜奈")
+            {
+                manager.SetLogList("怜奈： " + command["text"].ToString());
+            }
+            else if (m_characterName.text == "薫")
+            {
+                manager.SetLogList("薫： " + command["text"].ToString());
+            }
+            else
+            {
+                manager.SetLogList("---" + command["text"].ToString() + "---");
+            }
         }
 
         private void PauseSystem()

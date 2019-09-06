@@ -15,10 +15,13 @@ public class GameManager : MonoBehaviour
     private JsonNode m_json;
     private List<BaseCommand> commandList;
     private int commandIndex;
+    private Text textLog;
+    private Image logPanel;
     bool isOnAuto = false;
     bool isOnSkip = false;
     bool isPause = false;
     public List<string> logList = new List<string>();
+
 
     private static Dictionary<string, Type> CommandTable = new Dictionary<string, Type>
     {
@@ -41,6 +44,8 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("Auto", 0);
         //set to default 
         PlayerPrefs.SetInt("MiniGame", 1);
+        logPanel = this.transform.Find("Panel").GetComponent<Image>();
+        textLog = this.transform.Find("Panel/TextContainer/LogText").GetComponent<Text>();
         ScenarioResource resource = ScenarioResource.GetInstace();
         resource.Load();
         m_json = resource.GetJSON(Story);
@@ -69,7 +74,7 @@ public class GameManager : MonoBehaviour
     
     // Update is called once per frame
     void Update()
-    {
+    {     
         if (!m_currentCommand.GetEndGame)
         {
             m_currentCommand.Run();
@@ -78,6 +83,14 @@ public class GameManager : MonoBehaviour
         {
             NextCommand();
         }
+
+        string logShow = "";
+        foreach (string str in logList)
+        {
+            logShow += (str + "\n"+"\n");
+        }
+        textLog.text = logShow;
+
     }
 
     private bool IsCommandFinish() { return commandList.Count <= commandIndex;  }
@@ -133,6 +146,22 @@ public class GameManager : MonoBehaviour
         {
             isPause = true;
 
+        }
+    }
+
+    public void LogButton()
+    {
+        if (isPause)
+        {
+            isPause = false;
+            logPanel.gameObject.SetActive(false);
+            
+
+        }
+        else
+        {
+            isPause = true;
+            logPanel.gameObject.SetActive(true);
         }
     }
 
