@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     bool isOnAuto = false;
     bool isOnSkip = false;
     bool isPause = false;
+    public List<string> logList = new List<string>();
 
     private static Dictionary<string, Type> CommandTable = new Dictionary<string, Type>
     {
@@ -153,6 +154,11 @@ public class GameManager : MonoBehaviour
     public void SetIsPause(bool ispause)
     {
         isPause = ispause;
+    }
+
+    public void SetLogList(string loglist)
+    {
+        logList.Add(loglist);
     }
 
 }

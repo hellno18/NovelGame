@@ -19,9 +19,10 @@ namespace Assets
         private int index;
         private Image m_arrow;
         private Image box;
+       
         Button skip;
         Button auto;
-
+        
 
         public MessageCommand(GameObject root, IDictionary command) :base(root, command)
         {
@@ -50,12 +51,11 @@ namespace Assets
                 string currentMessage = (string)this.command["text"];
                 m_messageText.text = currentMessage.Substring(0, m_messageLength);
                 m_timer -= Time.deltaTime;
-               
+                
                 if (m_timer < 0)
                 {
                     if(!m_skip) m_timer = 0.05f;
                     else m_timer = 0.1f;
-
                     m_messageLength++;
                 }
 
@@ -81,8 +81,25 @@ namespace Assets
             {
                 auto.interactable = true;
                 skip.interactable = true;
-                if (Input.GetMouseButtonUp(0)&&!manager.GetIsPause)
+                if (Input.GetMouseButtonUp(0)||Input.GetKeyDown(KeyCode.LeftControl) ||
+                    (Input.GetKeyDown(KeyCode.RightControl)) && !manager.GetIsPause)
                 {
+                    if (m_characterName.text == "ユキ")
+                    {
+                        manager.SetLogList("ユキ： " + command["text"].ToString());
+                    }
+                    else if(m_characterName.text == "玲奈")
+                    {
+                        
+                    }
+                    else if (m_characterName.text == "薫")
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
                     this.isEndGame = true;
                     m_arrow.gameObject.SetActive(false);
                 }
@@ -116,6 +133,25 @@ namespace Assets
                 {
                     m_timerAuto = 1.5f;
                     this.isEndGame = true;
+                }
+                if (this.isEndGame)
+                {
+                    if (m_characterName.text == "ユキ")
+                    {
+                        manager.SetLogList("ユキ： " + command["text"].ToString());
+                    }
+                    else if (m_characterName.text == "玲奈")
+                    {
+
+                    }
+                    else if (m_characterName.text == "薫")
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
                 }
             }
 
