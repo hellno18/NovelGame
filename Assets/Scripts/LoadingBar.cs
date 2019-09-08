@@ -7,7 +7,7 @@ using Assets;
 
 public class LoadingBar : MonoBehaviour
 {
-    // 1 : minigame1 
+    // 1 : minigame1 || 3 minigame2 || 5 minigame3
     private float _currentValue=0f;
     private Image _filledImage;
     private Text _timerText;
@@ -18,6 +18,7 @@ public class LoadingBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		//Loading bar load
         _filledImage = this.transform.Find("Red").GetComponent<Image>();
         _timerText= this.transform.Find("White/Text").GetComponent<Text>();
 
@@ -25,6 +26,7 @@ public class LoadingBar : MonoBehaviour
         resource = ScenarioResource.GetInstace();
         resource.Load();
 
+		//random 20 until 24 background ID
         _random = Random.Range(20, 24);
         _background = this.transform.Find("BG").GetComponent<Image>();
     }
@@ -59,6 +61,7 @@ public class LoadingBar : MonoBehaviour
         {
             SceneManager.LoadScene("MiniGame1");
         }
+		//Scene3
         else if (PlayerPrefs.GetInt("MiniGame") == 2)
         {
             SceneManager.LoadScene("Scene3");
@@ -67,6 +70,7 @@ public class LoadingBar : MonoBehaviour
         {
             SceneManager.LoadScene("MiniGame2");
         }
+		//Scene4
         else if (PlayerPrefs.GetInt("MiniGame") == 4)
         {
             SceneManager.LoadScene("Scene4");
@@ -75,10 +79,12 @@ public class LoadingBar : MonoBehaviour
         {
             SceneManager.LoadScene("MiniGame3");
         }
+		//Scene4
         else if (PlayerPrefs.GetInt("MiniGame") == 6)
         {
             SceneManager.LoadScene("Scene5");
         }
+		//MainMenu
         else if (PlayerPrefs.GetInt("MiniGame") == 7)
         {
             SceneManager.LoadScene("MainMenu");

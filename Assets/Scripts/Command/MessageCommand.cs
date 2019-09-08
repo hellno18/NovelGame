@@ -41,6 +41,7 @@ namespace Assets
 
         public override void Run()
         {
+			//if animation is true
             if (m_isAnimationPlay)
             {
                 string nameChar= "";
@@ -68,10 +69,12 @@ namespace Assets
                 }
                 
             }
+			//while pressed right mouse
             else if (Input.GetMouseButtonDown(1))
             {
                 PauseSystem();
             }
+			//while paused
             else if (manager.GetIsPause)
             {
                 log.interactable = false;
@@ -93,6 +96,7 @@ namespace Assets
                 }
             }
             
+			
             if (!manager.GetIsOnAuto)
             {
                 if (Input.GetKeyUp(KeyCode.LeftControl) || (Input.GetKeyUp(KeyCode.RightControl)))
@@ -118,6 +122,8 @@ namespace Assets
                 }
 
             }
+			
+			//while Auto system is on
             else if(manager.GetIsOnAuto)
             {
                 m_timerAuto -= Time.deltaTime;
@@ -132,6 +138,7 @@ namespace Assets
                 }
             }
 
+			//while Skip system is on
             if (manager.GetIsOnSkip)
             {
                 m_timerSkip -= Time.deltaTime;
@@ -146,12 +153,15 @@ namespace Assets
                 }
             }
 
+			//while ScrollWheel is going up
             if (Input.GetAxisRaw("Mouse ScrollWheel") > 0)
             {
                 logPanel.gameObject.SetActive(true);
                 manager.SetIsPause(true);
 
             }
+			
+			//while ScrollWheel is going down
             else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0)
             {
                 logPanel.gameObject.SetActive(false);

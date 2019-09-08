@@ -9,6 +9,7 @@ using Assets;
 
 public class GameManager : MonoBehaviour
 {
+	//Story 1-5 json Scene
     [SerializeField] int Story;
     private BaseCommand m_currentCommand;
     private TextAsset m_textArea;
@@ -46,8 +47,11 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("MiniGame", 1);
         logPanel = this.transform.Find("Panel").GetComponent<Image>();
         textLog = this.transform.Find("Panel/TextContainer/LogText").GetComponent<Text>();
-        ScenarioResource resource = ScenarioResource.GetInstace();
+        
+		//resource load
+		ScenarioResource resource = ScenarioResource.GetInstace();
         resource.Load();
+		//Get json
         m_json = resource.GetJSON(Story);
         commandList = new List<BaseCommand>();
      
@@ -75,6 +79,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {     
+		//if GetEndGame bool is not true
         if (!m_currentCommand.GetEndGame)
         {
             m_currentCommand.Run();
@@ -84,6 +89,7 @@ public class GameManager : MonoBehaviour
             NextCommand();
         }
 
+		//Log system
         string logShow = "";
         foreach (string str in logList)
         {

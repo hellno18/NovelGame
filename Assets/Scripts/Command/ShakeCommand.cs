@@ -14,6 +14,7 @@ namespace Assets
         private Image m_arrow;
         public ShakeCommand(GameObject root, IDictionary command) : base(root, command)
         {
+			//Load component
             _camera = root.transform.Find("BG").GetComponent<Image>();
             m_arrow = root.transform.Find("ArrowClick").GetComponent<Image>();
             manager = GameObject.Find("Canvas").GetComponent<GameManager>();
@@ -31,6 +32,7 @@ namespace Assets
             }
             if (_isShake)
             {
+				//Background Shake random -10 to 10 * 0.3f
                 for(int i = 0; i < 10; i++)
                 {
                     _camera.transform.localPosition = new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10)) * 0.3f;

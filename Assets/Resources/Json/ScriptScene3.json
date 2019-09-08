@@ -17,7 +17,8 @@
       "command_type": "show_character",
       "position": "left",
       "chara_id": 0,
-      "id": 5
+      "id": 5,
+	  "flip":"right"
     },
     {
       "command_type": "show_character",

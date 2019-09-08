@@ -7,8 +7,10 @@ using Assets;
 
 public class MiniGameManager : MonoBehaviour
 {
+	//minigame state?
     [SerializeField] private int _miniGameStage;
-    private int _currCount=0;
+    
+	private int _currCount=0;
     private Image _health;
     private AudioSource _audioSourceBGM;
     private AudioSource _audioSourceSFX;
@@ -18,6 +20,7 @@ public class MiniGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		//Load Resource
         _currCount = 0;
         _health = this.transform.Find("Health").GetComponent<Image>();
         _audioSourceBGM = this.GetComponent<AudioSource>();
@@ -58,6 +61,7 @@ public class MiniGameManager : MonoBehaviour
     }
     private void Run()
     {
+		//Gameplay minigame 1-3
         switch (_miniGameStage)
         {
             case 1:
@@ -228,6 +232,7 @@ public class MiniGameManager : MonoBehaviour
         }  
     }
     
+	//false route
     IEnumerator ButtonRoutine()
     {
         yield return new WaitForSeconds(1f);
@@ -237,7 +242,9 @@ public class MiniGameManager : MonoBehaviour
         }
         _audioSourceSFX.Stop();
     }
-    IEnumerator FinishRoutine()
+    
+	//True route or die
+	IEnumerator FinishRoutine()
     {
         yield return new WaitForSeconds(1f);
         _audioSourceSFX.Stop();

@@ -13,6 +13,7 @@ public class GameOver : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
+		//Load Resource
         audioSourceSFX = GameObject.Find("SFX").GetComponent<AudioSource>();
         audioSourceBGM = this.transform.GetComponent<AudioSource>();
         audioSourceSFX.volume = PlayerPrefs.GetFloat("sfx");

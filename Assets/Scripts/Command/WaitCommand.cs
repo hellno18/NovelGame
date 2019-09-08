@@ -13,11 +13,13 @@ namespace Assets
         {
             manager = GameObject.Find("Canvas").GetComponent<GameManager>();
         }
+		
         public override void Run()
         {
             if (Input.GetMouseButtonDown(0)||
                 Input.GetKeyUp(KeyCode.LeftControl)||
-                Input.GetKeyUp(KeyCode.RightControl)|| manager.GetIsOnAuto || manager.GetIsOnSkip)
+                Input.GetKeyUp(KeyCode.RightControl)|| 
+				manager.GetIsOnAuto || manager.GetIsOnSkip)
             {
                 this.isEndGame = true;
             }

@@ -28,6 +28,7 @@ public class MainMenu : MonoBehaviour
     Text sfxText;
     private void Awake()
     {
+		//Load Resource
         _indexBGM = 12;
         PlayerPrefs.SetInt("MiniGame", 0);
         start = this.transform.Find("StartButton").GetComponent<Button>();
@@ -42,6 +43,7 @@ public class MainMenu : MonoBehaviour
         bgmText = this.transform.Find("PanelOption/bgmText").GetComponent<Text>();
         sfxText= this.transform.Find("PanelOption/sfxText").GetComponent<Text>();
 
+		// if bgm and sfx is not created
         if (!PlayerPrefs.HasKey("bgm")|| !PlayerPrefs.HasKey("sfx"))
         {
             sliderBGM.value = 0.5f;
@@ -131,6 +133,7 @@ public class MainMenu : MonoBehaviour
         option.gameObject.SetActive(true);
         panel.gameObject.SetActive(false);
     }
+	
     public void OptionButton()
     {
         PlaySFX();
